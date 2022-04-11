@@ -1,23 +1,27 @@
 //Слайдеры
 const promoSwiper = new Swiper(".promo-swiper", {
-    slidesPerView: 1,
-    slidesPerGroup: 1,
-    speed: 1000,
-    simulateTouch: false,
-    autoplay: {
-        delay: 5000,
-    },
-    spaceBetween: 0,
-    watchOverflow: true,
-    navigation: {
-        nextEl: ".promo-swiper-button-next",
-        prevEl: ".promo-swiper-button-prev",
-    },
-    pagination: {
-      el: '.promo-swiper-pagination',
-      clickable: 'true',
-    },
+	slidesPerView: 1,
+	slidesPerGroup: 1,
+	speed: 1000,
+	simulateTouch: false,
+	// autoplay: {
+	// 	delay: 5000,
+	// },
+	spaceBetween: 0,
+	watchOverflow: true,
+	navigation: {
+		nextEl: ".promo-swiper-button-next",
+		prevEl: ".promo-swiper-button-prev",
+	},
+	pagination: {
+		el: ".promo-swiper-pagination",
+		clickable: "true",
+	},
 });
+
+
+
+
 
 
 const complexMarketingSwiper = new Swiper(".complex-marketing-swiper", {

@@ -1774,17 +1774,6 @@ h6 {
 
 a {
   text-decoration: none;
-  color: #027A3C;
-  position: relative;
-}
-a::after {
-  position: absolute;
-  content: "";
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #027A3C;
 }
 
 .index-page {
@@ -1825,18 +1814,17 @@ a::after {
 }
 
 .basic-link {
-  font-weight: 300;
-  font-size: 0.8rem;
-  line-height: 1.1;
-  color: black;
-  transition: 0.2s ease;
+  color: #027A3C;
+  position: relative;
 }
-.basic-link span {
-  margin-left: 3px;
-}
-.basic-link:hover {
-  transition: 0.2s ease;
-  color: #737373;
+.basic-link::after {
+  position: absolute;
+  content: "";
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #027A3C;
 }
 
 .buttons-wrapper {
