@@ -1861,6 +1861,15 @@ a {
   background-color: white;
   color: #027A3C;
 }
+.basic-button--white-invert {
+  background-color: white;
+  color: #B1B1B1;
+  box-shadow: inset 3px white;
+}
+.basic-button--white-invert:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+}
 
 ol.breadcrumb {
   padding-top: 1rem;
@@ -1928,5 +1937,66 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
 }
 .pagination .page-item.active .page-link {
   font-weight: 700;
+}
+
+.top-scroll-button {
+  width: 50px;
+  height: 50px;
+  right: 45px;
+  bottom: 75px;
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25AE67;
+  border: unset;
+  border-radius: 50%;
+  bottom: 35px;
+  background-image: url("../img/arrow-top.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  padding: 0;
+  opacity: 0;
+}
+@media (max-width: 1700px) {
+  .top-scroll-button {
+    right: 55px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 1599px) {
+  .top-scroll-button {
+    background-size: 50%;
+  }
+}
+@media (max-width: 1399px) {
+  .top-scroll-button {
+    right: 55px;
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (max-width: 1199px) {
+  .top-scroll-button {
+    right: 35px;
+    bottom: 75px;
+  }
+}
+@media (max-width: 767px) {
+  .top-scroll-button {
+    right: 25px;
+    bottom: 20px;
+  }
+}
+
+.top-scroll-button.show {
+  opacity: 1;
+  visibility: visible;
+}
+.top-scroll-button.show:hover {
+  opacity: 0.7;
+  transition: 0.3s ease;
 }
 /*# sourceMappingURL=style.css.map */

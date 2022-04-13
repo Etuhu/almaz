@@ -19,6 +19,26 @@ const promoSwiper = new Swiper(".promo-swiper", {
 	},
 });
 
+const staffSwiper = new Swiper(".staff-swiper", {
+	slidesPerView: 1,
+	slidesPerGroup: 1,
+	speed: 1000,
+	simulateTouch: false,
+	// autoplay: {
+	// 	delay: 5000,
+	// },
+	spaceBetween: 0,
+	watchOverflow: true,
+	navigation: {
+		nextEl: ".staff-swiper-button-next",
+		prevEl: ".staff-swiper-button-prev",
+	},
+	pagination: {
+		el: ".staff-swiper-pagination",
+		clickable: "true",
+	},
+});
+
 
 
 
