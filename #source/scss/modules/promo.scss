@@ -1,0 +1,78 @@
+.promo {
+    position: relative;
+    .promo-slider {
+        .swiper-slide {
+            position: relative;
+            .caption {
+                position: absolute;
+                top: 380px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 100;
+                color: white;
+                h2 {
+                    font-weight: 500;
+                    font-size: 2.65rem;
+                    margin-bottom: 30px;
+                }
+                p {
+                    font-weight: 500;
+                }
+                .links {
+                    margin-top: 50px;
+                }
+            }
+        }
+        .promo-swiper-pagination-container {
+            position: absolute;
+            bottom: 325px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 150;
+            width: 100%;
+            .promo-swiper-pagination {
+                position: unset;
+                bottom: unset;
+                left: unset;
+                display: flex;
+                flex-wrap: wrap;
+                .swiper-pagination-bullet {
+                    background-color: white;
+                    border-radius: 3px;
+                    height: 10px;
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+    .promo-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        width: 100%;
+        min-height: 270px;
+        background: rgba(255, 255, 255, 0.2);
+        // box-shadow: inset 0px 36px 23px -36px rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(7px);
+        .promo-info-list {
+            .promo-info-item {
+                display: flex;
+                align-items: center;
+                color: $green;
+                .number {
+                    font-weight: 700;
+                    font-size: 2.65rem;
+                    margin-right: 50px;
+                }
+                .promo-info-text {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

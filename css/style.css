@@ -1838,30 +1838,38 @@ a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 10px 20px 8px;
+  padding: 21px 24px;
   color: white;
   font-weight: 500;
   font-size: 1rem;
   line-height: 1;
   border-radius: 6px;
-  background-color: linear-gradient(90.73deg, #25AE67 0.75%, #027A3C 99.52%);
+  background-image: linear-gradient(90.73deg, #25AE67 0.75%, #027A3C 99.52%);
   transition: 0.2s ease;
 }
 .basic-button:hover {
-  background-color: rgba(255, 255, 255, 0);
+  background-image: unset;
+  background-color: white;
   color: #027A3C;
+  transition: 0.2s ease;
+  box-shadow: inset 0 0 0 3px white;
+}
+.basic-button:active {
+  opacity: 0.8;
   transition: 0.2s ease;
 }
 .basic-button--white {
+  background-image: unset;
   background-color: rgba(255, 255, 255, 0);
   color: white;
-  box-shadow: inset 3px white;
+  box-shadow: inset 0 0 0 3px white;
 }
 .basic-button--white:hover {
   background-color: white;
   color: #027A3C;
 }
 .basic-button--white-invert {
+  background-image: unset;
   background-color: white;
   color: #B1B1B1;
   box-shadow: inset 3px white;
@@ -1869,6 +1877,9 @@ a {
 .basic-button--white-invert:hover {
   background-color: rgba(255, 255, 255, 0);
   color: white;
+}
+.basic-button + .basic-button {
+  margin-left: 30px;
 }
 
 ol.breadcrumb {
@@ -2310,6 +2321,200 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   margin: 50px auto 20px;
   color: #027A3C;
   display: inline-block;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: 0.3s ease;
+  min-height: 150px;
+}
+.header .logo-wrapper {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.header .logo-wrapper .logo {
+  transition: 0.3s ease;
+}
+.header.fixed-top {
+  position: fixed;
+  min-height: 75px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.header.fixed-top .logo-wrapper {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.header.fixed-top .logo-wrapper .logo {
+  width: 250px;
+  transition: 0.3s ease;
+}
+.header.fixed-top .navbar-site .navbar-collapse .navbar-nav .nav-link {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.header.fixed-top .navbar-site .navbar-collapse .navbar-nav .nav-link::before {
+  height: 7px;
+}
+
+@media (min-width: 992px) {
+  .header .navbar-site {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .header .navbar-site .navbar-collapse {
+    height: 100%;
+    justify-content: center;
+  }
+}
+@media (min-width: 992px) {
+  .header .navbar-site .navbar-collapse .navbar-nav {
+    height: 100%;
+  }
+}
+.header .navbar-site .navbar-collapse .navbar-nav .nav-item.active .nav-link {
+  background-color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 1px #027A3C, 0 0 1px #027A3C;
+  color: #027A3C;
+}
+.header .navbar-site .navbar-collapse .navbar-nav .nav-item.active .nav-link::before {
+  transform: translateY(0);
+}
+.header .navbar-site .navbar-collapse .navbar-nav .nav-link {
+  font-weight: 300;
+  color: #54544F;
+  position: relative;
+}
+@media (min-width: 992px) {
+  .header .navbar-site .navbar-collapse .navbar-nav .nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+  .header .navbar-site .navbar-collapse .navbar-nav .nav-link::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    transform: translateY(10px);
+    background-color: #027A3C;
+    transition: 0.3s ease;
+  }
+  .header .navbar-site .navbar-collapse .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 1px #027A3C, 0 0 1px #027A3C;
+    color: #027A3C;
+    transition: 0.3s ease;
+  }
+  .header .navbar-site .navbar-collapse .navbar-nav .nav-link:hover::before {
+    transition: 0.3s ease;
+    transform: translateY(0);
+  }
+}
+.header .navbar-site .navbar-collapse .navbar-nav .dropdown-toggle::after {
+  border: unset;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  margin-left: 10px;
+  margin-top: 0.15rem;
+  vertical-align: unset;
+  transition: 0.3s ease;
+}
+.header .navbar-site .navbar-collapse .navbar-nav .dropdown-toggle:hover::after {
+  background-color: #027A3C;
+  transition: 0.3s ease;
+}
+
+.promo {
+  position: relative;
+}
+.promo .promo-slider .swiper-slide {
+  position: relative;
+}
+.promo .promo-slider .swiper-slide .caption {
+  position: absolute;
+  top: 380px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  color: white;
+}
+.promo .promo-slider .swiper-slide .caption h2 {
+  font-weight: 500;
+  font-size: 2.65rem;
+  margin-bottom: 30px;
+}
+.promo .promo-slider .swiper-slide .caption p {
+  font-weight: 500;
+}
+.promo .promo-slider .swiper-slide .caption .links {
+  margin-top: 50px;
+}
+.promo .promo-slider .promo-swiper-pagination-container {
+  position: absolute;
+  bottom: 325px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 150;
+  width: 100%;
+}
+.promo .promo-slider .promo-swiper-pagination-container .promo-swiper-pagination {
+  position: unset;
+  bottom: unset;
+  left: unset;
+  display: flex;
+  flex-wrap: wrap;
+}
+.promo .promo-slider .promo-swiper-pagination-container .promo-swiper-pagination .swiper-pagination-bullet {
+  background-color: white;
+  border-radius: 3px;
+  height: 10px;
+  flex-grow: 1;
+}
+.promo .promo-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  width: 100%;
+  min-height: 270px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+}
+.promo .promo-info .promo-info-list .promo-info-item {
+  display: flex;
+  align-items: center;
+  color: #027A3C;
+}
+.promo .promo-info .promo-info-list .promo-info-item .number {
+  font-weight: 700;
+  font-size: 2.65rem;
+  margin-right: 50px;
+}
+.promo .promo-info .promo-info-list .promo-info-item .promo-info-text {
+  font-weight: 400;
 }
 
 .footer-wrapper {

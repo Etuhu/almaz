@@ -1,12 +1,24 @@
+let header = document.querySelector(".header");
+function onWindowScroll() {
+    if (window.pageYOffset > (header.clientHeight / 2)) {
+      header.classList.add("fixed-top");
+    }
+    else {
+      header.classList.remove("fixed-top")
+    }
+}
+
+window.addEventListener('scroll', onWindowScroll);
+
 //Слайдеры
 const promoSwiper = new Swiper(".promo-swiper", {
 	slidesPerView: 1,
 	slidesPerGroup: 1,
 	speed: 1000,
 	simulateTouch: false,
-	// autoplay: {
-	// 	delay: 5000,
-	// },
+	autoplay: {
+		delay: 5000,
+	},
 	spaceBetween: 0,
 	watchOverflow: true,
 	navigation: {
@@ -15,8 +27,15 @@ const promoSwiper = new Swiper(".promo-swiper", {
 	},
 	pagination: {
 		el: ".promo-swiper-pagination",
-		clickable: "true",
+		clickable: true,
 	},
+    renderProgressbar: function (progressbarFillClass) {
+        return '<span class="' + progressbarFillClass + '"></span>';
+    }(),
+});
+
+promoSwiper.on('slideChange', function() {
+    renderProgressbar();
 });
 
 const staffSwiper = new Swiper(".staff-swiper", {

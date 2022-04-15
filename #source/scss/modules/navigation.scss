@@ -1,0 +1,85 @@
+.header .navbar-site {
+    @media (min-width: 992px) {
+        height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .navbar-collapse {
+        @media (min-width: 992px) {
+            height: 100%;
+            justify-content: center;
+        }
+        .navbar-nav {
+            @media (min-width: 992px) {
+                height: 100%;
+            }
+            .nav-item {
+                &.active {
+                    .nav-link {
+                        background-color: rgba(255, 255, 255, 0.6);
+                        text-shadow: 0 0 1px $green, 0 0 1px $green;
+                        color: $green;
+                        &::before {
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+            .nav-link {
+                font-weight: 300;
+                color: $main-font-color;
+                position: relative;
+                @media (min-width: 992px) {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    overflow: hidden;
+                    transition: 0.3s ease;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 10px;
+                        transform: translateY(10px);
+                        background-color: $green;
+                        transition: 0.3s ease;
+                    }
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.6);
+                        text-shadow: 0 0 1px $green, 0 0 1px $green;
+                        color: $green;
+                        transition: 0.3s ease;
+                        &::before {
+                            transition: 0.3s ease;
+                            transform: translateY(0);
+                        }
+                    }
+                }
+            }
+            .dropdown-toggle {
+                &::after {
+                    border: unset;
+                    border-radius: 50%;
+                    width: 5px;
+                    height: 5px;
+                    background-color: black;
+                    margin-left: 10px;
+                    margin-top: 0.15rem;
+                    vertical-align: unset;
+                    transition: 0.3s ease;
+                }
+                &:hover {
+                    &::after {
+                        background-color: $green;
+                        transition: 0.3s ease;
+                    }
+                }
+            }
+        }
+    }
+}
