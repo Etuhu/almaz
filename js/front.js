@@ -8,7 +8,8 @@ function onWindowScroll() {
     }
 }
 
-window.addEventListener('scroll', onWindowScroll);
+window.addEventListener("scroll", onWindowScroll);
+window.addEventListener("DOMContentLoaded", onWindowScroll);
 
 //Слайдеры
 const promoSwiper = new Swiper(".promo-swiper", {
@@ -29,14 +30,9 @@ const promoSwiper = new Swiper(".promo-swiper", {
 		el: ".promo-swiper-pagination",
 		clickable: true,
 	},
-    renderProgressbar: function (progressbarFillClass) {
-        return '<span class="' + progressbarFillClass + '"></span>';
-    }(),
 });
 
-promoSwiper.on('slideChange', function() {
-    renderProgressbar();
-});
+
 
 const staffSwiper = new Swiper(".staff-swiper", {
 	slidesPerView: 1,

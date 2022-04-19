@@ -1,0 +1,57 @@
+.faq {
+    background-color: #ECF5F1;
+    .basic-title {
+        color: $green;
+        margin-bottom: 30px;
+    }
+    .faq-content {
+        margin-top: 50px;
+        .faq-wrapper {
+            .faq-item {
+                margin-bottom: 30px;
+                .content {
+                    position: relative;
+                    background-color: white;
+                    padding: 35px;
+                    height: 100%;
+                    transition: 0.3s ease;
+                    &:hover {
+                        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+                        transition: 0.3s ease;
+                        > a {
+                            color: $green;
+                            transition: 0.3s ease;
+                        }
+                        .preview {
+                            color: $main-font-color;
+                        }
+                    }
+                    .title {
+                        font-weight: 700;
+                        font-size: 1rem;
+                        line-height: 1.3;
+                        margin-bottom: 20px;
+                    }
+                    .preview {
+                        font-size: 0.75rem;
+                        color: #95B2B6;
+                    }
+                    > a {
+                        color: #95B2B6;
+                        font-weight: 500;
+                        font-size: 0.7rem;
+                        transition: 0.3s ease;
+                    }
+                }
+            }
+        }
+        .feed-link {
+            margin-top: 20px;
+        }
+    }
+}
+
+.faq--index {
+    padding-top: 170px;
+    padding-bottom: 50px;
+}

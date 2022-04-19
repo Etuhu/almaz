@@ -1,0 +1,87 @@
+.services {
+    .services-list {
+        .services-list-item {
+            margin-bottom: 36px;
+            .content {
+                display: flex;
+                align-items: flex-start;
+                background-color: white;
+                position: relative;
+                padding: 22px 22px 22px 33px;
+                border-radius: 9px;
+                transition: 0.3s ease;
+                &:hover {
+                    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+                    transition: 0.3s ease;
+                    .description {
+                        > a {
+                            color: $green;
+                            transition: 0.3s ease;
+                        }
+                    }
+                    .pic {
+                        > img {
+                            transform: scale(1.1);
+                            transition: 0.3s ease;
+                        }
+                    }
+                }
+                .description {
+                    flex-shrink: 1;
+                    flex-grow: 0;
+                    width: 71%;
+                    max-width: 71%;
+                    padding-right: 20px;
+                    .title {
+                        font-weight: 500;
+                        font-size: 1rem;
+                    }
+                    p {
+                        font-size: 0.75rem;
+                    }
+                    > a {
+                        color: #95B2B6;
+                        font-weight: 500;
+                        font-size: 0.7rem;
+                        transition: 0.3s ease;
+                    }
+                }
+                .pic {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 40px;
+                    border-radius: 9px;
+                    background-color: #ECF5F1;
+                    flex-grow: 1;
+                    flex-shrink: 0;
+                    width: 29%;
+                    max-width: 29%;
+                    overflow: hidden;
+                    > img {
+                        transition: 0.3s ease;
+                    }
+                }
+                a.stretched-link {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    font-size: 0;
+                    color: rgba(255, 255, 255, 0);
+                }
+            }
+        }
+        + .feed-link {
+            position: relative;
+            margin-top: 30px;
+        }
+    }
+}
+
+.services.services--index {
+    padding-top: 260px;
+    padding-bottom: 150px;
+}
