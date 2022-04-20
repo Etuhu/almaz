@@ -1,4 +1,5 @@
 let header = document.querySelector(".header");
+let collapseMenu = header.querySelector(".navbar-collapse");
 function onWindowScroll() {
     if (window.pageYOffset > (header.clientHeight / 2)) {
       header.classList.add("fixed-top");
@@ -10,6 +11,22 @@ function onWindowScroll() {
 
 window.addEventListener("scroll", onWindowScroll);
 window.addEventListener("DOMContentLoaded", onWindowScroll);
+collapseMenu.addEventListener("show.bs.collapse", function () {
+    if (!header.classList.contains("open-mobile")) {
+        header.classList.add("open-mobile");
+    }
+    if (!document.body.classList.contains("fixed")) {
+        document.body.classList.add("fixed");
+    }
+});
+collapseMenu.addEventListener("hidden.bs.collapse", function () {
+    if (header.classList.contains("open-mobile")) {
+        header.classList.remove("open-mobile");
+    }
+    if (document.body.classList.contains("fixed")) {
+        document.body.classList.remove("fixed");
+    }
+});
 
 //Слайдеры
 const promoSwiper = new Swiper(".promo-swiper", {
@@ -17,9 +34,12 @@ const promoSwiper = new Swiper(".promo-swiper", {
 	slidesPerGroup: 1,
 	speed: 1000,
 	simulateTouch: false,
-	autoplay: {
-		delay: 5000,
-	},
+	// autoplay: {
+	// 	delay: 5000,
+	// },
+    // preloadImages: true,
+    // lazy: true,
+    // loadPrevNext: true,
 	spaceBetween: 0,
 	watchOverflow: true,
 	navigation: {

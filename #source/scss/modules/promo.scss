@@ -1,8 +1,21 @@
 .promo {
     position: relative;
     .promo-slider {
+        background-color: #dcdcde;
         .swiper-slide {
             position: relative;
+            .pic {
+                img {
+                    &.swiper-lazy-loading {
+                        opacity: 0;
+                        transition: 0.5s ease;
+                    }
+                    &.swiper-lazy-loaded {
+                        opacity: 1;
+                        transition: 0.5s ease;
+                    }
+                }
+            }
             .caption {
                 position: absolute;
                 top: 380px;
@@ -10,16 +23,53 @@
                 transform: translateX(-50%);
                 z-index: 100;
                 color: white;
+                @media (max-width: 1920px) {
+                    top: 260px;
+                }
+                @media (max-width: 1699px) {
+                    top: 220px;
+                }
+                @media (max-width: 1599px) {
+                    top: 180px;
+                }
+                @media (max-width: 1499px) {
+                    top: 210px;
+                }
+                @media (max-width: 1399px) {
+                    top: 170px;
+                }
+                @media (max-width: 1299px) {
+                    top: 150px;
+                }
+                @media (max-width: 1199px) {
+                    top: 120px;
+                }
                 h2 {
                     font-weight: 500;
                     font-size: 2.65rem;
                     margin-bottom: 30px;
+                    @media (max-width: 1499px) {
+                        margin-bottom: 20px;
+                    }
+                    @media (max-width: 1199px) {
+                        font-size: 2rem;
+                        margin-bottom: 10px;
+                    }
+                    @media (max-width: 991px) {
+                        font-size: 1.75rem;
+                    }
                 }
                 p {
                     font-weight: 500;
                 }
                 .links {
                     margin-top: 50px;
+                    @media (max-width: 1499px) {
+                        margin-top: 35px;
+                    }
+                    @media (max-width: 1199px) {
+                        margin-top: 25px;
+                    }
                 }
             }
         }
@@ -30,6 +80,18 @@
             transform: translateX(-50%);
             z-index: 150;
             width: 100%;
+            @media (max-width: 1920px) {
+                bottom: 235px;
+            }
+            @media (max-width: 1699px) {
+                bottom: 200px;
+            }
+            @media (max-width: 1499px) {
+                bottom: 160px;
+            }
+            @media (max-width: 1199px) {
+                bottom: 120px;
+            }
             .promo-swiper-pagination {
                 position: unset;
                 bottom: unset;
@@ -43,11 +105,17 @@
                     margin: 0;
                     flex-grow: 1;
                     opacity: 0.1;
+                    @media (max-width: 1499px) {
+                        height: 7px;
+                    }
                     &-active {
                         opacity: 0.8;
                     }
                     + .swiper-pagination-bullet {
                         margin-left: 30px;
+                        @media (max-width: 1499px) {
+                            margin-left: 25px;
+                        }
                     }
                 }
             }
@@ -66,6 +134,18 @@
         min-height: 270px;
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(7px);
+        @media (max-width: 1920px) {
+            min-height: 200px;
+        }
+        @media (max-width: 1699px) {
+            min-height: 160px;
+        }
+        @media (max-width: 1499px) {
+            min-height: 130px;
+        }
+        @media (max-width: 1199px) {
+            min-height: 100px;
+        }
         .promo-info-list {
             .promo-info-item {
                 display: flex;
@@ -75,9 +155,25 @@
                     font-weight: 700;
                     font-size: 2.65rem;
                     margin-right: 50px;
+                    @media (max-width: 1699px) {
+                        margin-right: 25px;
+                    }
+                    @media (max-width: 1599px) {
+                        margin-right: 20px;
+                    }
+                    @media (max-width: 1399px) {
+                        font-size: 2.25rem;
+                    }
+                    @media (max-width: 1199px) {
+                        margin-right: 10px;
+                    }
                 }
                 .promo-info-text {
                     font-weight: 400;
+                    @media (max-width: 1399px) {
+                        font-size: 0.85rem;
+                        line-height: 1.3;
+                    }
                 }
             }
         }
