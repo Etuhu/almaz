@@ -2,17 +2,30 @@
     .services-list {
         .services-list-item {
             margin-bottom: 36px;
+            @media (max-width: 1599px) {
+                margin-bottom: 30px;
+            }
+            @media (max-width: 767px) {
+                margin-bottom: 20px;
+            }
             .content {
                 display: flex;
                 align-items: flex-start;
+                height: 100%;
                 background-color: white;
                 position: relative;
                 padding: 22px 22px 22px 33px;
                 border-radius: 9px;
                 transition: 0.3s ease;
+                @media (max-width: 1799px) {
+                    padding: 17px 17px 17px 25px;
+                }
                 &:hover {
                     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
                     transition: 0.3s ease;
+                    @media (max-width: 1399px) {
+                        box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.1);
+                    }
                     .description {
                         > a {
                             color: $green;
@@ -32,18 +45,38 @@
                     width: 71%;
                     max-width: 71%;
                     padding-right: 20px;
+                    @media (max-width: 1920px) {
+                        padding-right: 15px;
+                    }
+                    @media (max-width: 1599px) {
+                        width: 65%;
+                        max-width: 65%;
+                    }
+                    @media (max-width: 767px) {
+                        width: 70%;
+                        max-width: 70%;
+                    }
                     .title {
                         font-weight: 500;
                         font-size: 1rem;
+                        @media (max-width: 767px) {
+                            font-size: 1.3rem;
+                        }
                     }
                     p {
                         font-size: 0.75rem;
+                        @media (max-width: 767px) {
+                            font-size: 1rem;
+                        }
                     }
                     > a {
                         color: #95B2B6;
                         font-weight: 500;
                         font-size: 0.7rem;
                         transition: 0.3s ease;
+                        @media (max-width: 767px) {
+                            font-size: 0.9rem;
+                        }
                     }
                 }
                 .pic {
@@ -58,6 +91,21 @@
                     width: 29%;
                     max-width: 29%;
                     overflow: hidden;
+                    @media (max-width: 1920px) {
+                        padding: 30px;
+                    }
+                    @media (max-width: 1799px) {
+                        padding: 25px;
+                    }
+                    @media (max-width: 1599px) {
+                        padding: 20px;
+                        width: 35%;
+                        max-width: 35%;
+                    }
+                    @media (max-width: 767px) {
+                        width: 30%;
+                        max-width: 30%;
+                    }
                     > img {
                         transition: 0.3s ease;
                     }
@@ -86,8 +134,14 @@
 
 .services.services--index {
     padding-top: 260px;
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     @media (max-width: 1920px) {
         padding-top: 150px;
+    }
+    @media (max-width: 1699px) {
+        padding-top: 100px;
+    }
+    @media (max-width: 767px) {
+        padding-top: 60px;
     }
 }

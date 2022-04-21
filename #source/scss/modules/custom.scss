@@ -211,6 +211,9 @@ a {
     font-size: 1rem;
     line-height: 1;
     border-radius: 6px;
+    background-color: $light-green;
+    background-position: center;
+    background-repeat: no-repeat;
     background-image: linear-gradient(90.73deg, $light-green 0.75%, $green 99.52%);
     transition: 0.2s ease;
     @media (max-width: 1920px) {
@@ -225,19 +228,38 @@ a {
     @media (max-width: 1199px) {
         border-radius: 3px;
     }
+    @media (max-width: 991px) {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
     &:hover {
-        background-image: unset;
-        background-color: rgba(255, 255, 255, 1);
-        color: $green;
+        background-position: 1000px center;
+        background-color: $light-green;
+        color: white;
         transition: 0.2s ease;
-        box-shadow: inset 0 0 0 3px white;
-        @media (max-width: 1199px) {
-            box-shadow: inset 0 0 0 2px white;
-        }
     }
     &:active {
         opacity: 0.8;
         transition: 0.2s ease;
+        background-position: 1000px center;
+        background-color: $green;
+    }
+    &--grey {
+        background-image: unset;
+        background-color: rgba(255, 255, 255, 0);
+        color: $main-font-color;
+        box-shadow: inset 0 0 0 3px $main-font-color;
+        @media (max-width: 1199px) {
+            box-shadow: inset 0 0 0 2px $main-font-color;
+        }
+        &:hover {
+            background-color: rgba(255, 255, 255, 0);
+            color: white;
+            box-shadow: inset 0 0 0 3px white;
+            @media (max-width: 1199px) {
+                box-shadow: inset 0 0 0 2px white;
+            }
+        }
     }
     &--white {
         background-image: unset;
@@ -267,9 +289,12 @@ a {
         }
     }
     + .basic-button {
-        margin-left: 30px;
+        margin-left: 20px;
         @media (max-width: 1920px) {
-            margin-left: 20px;
+            margin-left: 15px;
+        }
+        @media (max-width: 991px) {
+            margin-left: 10px;
         }
     }
 }
@@ -393,6 +418,7 @@ ol.breadcrumb {
   }
   .top-scroll-button.show {
     opacity: 1;
+    z-index: 1500;
     visibility: visible;
     &:hover {
       opacity: 0.7;
