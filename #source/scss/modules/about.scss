@@ -36,8 +36,14 @@
             }
             p {
                 font-size: 0.8rem;
+                @media (max-width: 575px) {
+                    font-size: 1rem;
+                }
                 strong {
                     font-size: 1rem;
+                    @media (max-width: 575px) {
+                        font-size: 1.3rem;
+                    }
                 }
             }
             .signature-block {
@@ -46,6 +52,9 @@
                 align-items: center;
                 margin-top: auto;
                 .signature-pic {
+                    @media (max-width: 575px) {
+                        margin-left: auto;
+                    }
                     img {
                         @media (max-width: 1920px) {
                             width: 250px;
@@ -62,6 +71,9 @@
                         @media (max-width: 1199px) {
                             width: 170px;
                         }
+                        @media (max-width: 575px) {
+                            width: 162px;
+                        }
                     }
                 }
                 .signature-text {
@@ -77,6 +89,9 @@
                     }
                     @media (max-width: 991px) {
                         margin-right: 10%;
+                    }
+                    @media (max-width: 575px) {
+                        margin-right: 0;
                     }
                     p {
                         margin-bottom: 15px;
@@ -110,6 +125,9 @@
                 flex-direction: row-reverse;
                 align-items: center;
             }
+            @media (max-width: 575px) {
+                font-size: 1.7rem;
+            }
             span + svg,
             span + img {
                 margin-left: 10px;
@@ -126,6 +144,9 @@
                 @media (max-width: 991px) {
                     margin-right: 10px;
                     transform: rotate(180deg) translate(0, 0);
+                }
+                @media (max-width: 575px) {
+                    width: 24px;
                 }
             }
             &:hover {
@@ -161,6 +182,10 @@
                 width: 130px;
                 top: -45px;
             }
+            @media (max-width: 575px) {
+                width: 110px;
+                top: -35px;
+            }
         }
         &--left {
             left: -250px;
@@ -180,6 +205,10 @@
             @media (max-width: 1199px) {
                 width: 170px;
                 left: -100px;
+            }
+            @media (max-width: 575px) {
+                width: 150px;
+                left: -90px;
             }
         }
         &--right {
@@ -205,6 +234,9 @@
             }
             @media (max-width: 991px) {
                 right: 0;
+            }
+            @media (max-width: 575px) {
+                display: none;
             }
         }
     }
