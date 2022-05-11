@@ -7,6 +7,9 @@
         background-position: center;
         .swiper-slide {
             position: relative;
+            @media (max-width: 991px) {
+                height: auto;
+            }
             .pic {
                 display: flex;
                 align-items: flex-end;
@@ -59,45 +62,15 @@
             .caption {
                 position: relative;
                 z-index: 100;
-                // position: absolute;
-                //top: 380px;
-                // left: 50%;
-                // transform: translateX(-50%);
-                // z-index: 100;
                 color: $main-font-color;
-                // @media (max-width: 1920px) {
-                //     top: 260px;
-                // }
-                // @media (max-width: 1699px) {
-                //     top: 220px;
-                // }
-                // @media (max-width: 1599px) {
-                //     top: 180px;
-                // }
-                // @media (max-width: 1499px) {
-                //     top: 210px;
-                // }
-                // @media (max-width: 1399px) {
-                //     top: 170px;
-                // }
-                // @media (max-width: 1299px) {
-                //     top: 150px;
-                // }
-                // @media (max-width: 1199px) {
-                //     top: 120px;
-                // }
-                // @media (max-width: 991px) {
-                //     top: 180px;
-                // }
-                // @media (max-width: 899px) {
-                //     top: 150px;
-                // }
-                // @media (max-width: 767px) {
-                //     top: 130px;
-                // }
-                // @media (max-width: 699px) {
-                //     top: 110px;
-                // }
+                @media (max-width: 991px) {
+                    height: 100%;
+                }
+                > .row {
+                    @media (max-width: 991px) {
+                        height: 100%;
+                    }
+                }
                 h2 {
                     font-weight: 500;
                     font-size: 2.65rem;
