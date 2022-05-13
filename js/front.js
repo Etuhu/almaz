@@ -74,6 +74,63 @@ const staffSwiper = new Swiper(".staff-swiper", {
 	},
 });
 
+const certificates = new Swiper(".certificates-swiper", {
+	slidesPerView: 4,
+	slidesPerGroup: 1,
+	speed: 1000,
+	simulateTouch: true,
+	spaceBetween: 30,
+	watchOverflow: true,
+	navigation: {
+		nextEl: ".certificates-swiper-button-next",
+		prevEl: ".certificates-swiper-button-prev",
+	},
+	pagination: {
+		el: ".certificates-swiper-pagination",
+		clickable: "true",
+	},
+});
+
+const gallerySwiperBeer = new Swiper(".clinic-gallery-swiper", {
+    speed: 1000,
+    slidesPerView: 3,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    simulateTouch: false,
+    watchOverflow: true,
+    navigation: {
+        nextEl: ".clinic-gallery-swiper-button-next",
+        prevEl: ".clinic-gallery-swiper-button-prev",
+    },
+    watchSlidesProgress: true,
+    pagination: {
+        el: ".clinic-gallery-swiper-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        // when window width is >= 1200px
+        1200: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+        },
+        576: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+        },
+        300: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+        },
+    },
+});
+
 
 //Кнопка прокрутки наверх
 var scrollButton = document.getElementById('top-button');
@@ -93,8 +150,7 @@ function trackScroll() {
 }
 
 function backToTop() {
-    //   window.scrollTo(0, 0);
-      window.scrollTo({
+    window.scrollTo({
         top: 0,
         behavior: "smooth"
     });

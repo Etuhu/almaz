@@ -1,10 +1,14 @@
-.header {
+.header.header--index {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 1);
     transition: 0.35s ease;
     min-height: 150px;
     @media (max-width: 1920px) {
@@ -78,6 +82,10 @@
     }
     &.fixed-top {
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
         min-height: 75px;
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -164,6 +172,7 @@
         height: 100vh;
         min-height: 100vh;
         background-color: white;
+        z-index: 1500;
         transition: 0.35s ease;
     }
     .navbar-toggler-wrapper {
