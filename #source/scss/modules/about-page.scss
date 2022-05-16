@@ -2,6 +2,17 @@
     .statistic {
         margin-top: 150px;
         margin-bottom: 100px;
+        @media (max-width: 1920px) {
+            margin-top: 100px;
+        }
+        @media (max-width: 1399px) {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        @media (max-width: 575px) {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
         > .container > .row {
             align-items: center;
         }
@@ -10,18 +21,45 @@
             font-size: 2rem;
             line-height: 1.32;
             color: #95B2B6;
+            @media (max-width: 991px) {
+                margin-bottom: 20px;
+            }
+            @media (max-width: 767px) {
+                text-align: center;
+            }
         }
         .statistic-items {
             display: flex;
             justify-content: space-between;
             gap: 0 30px;
             flex-wrap: wrap;
+            @media (max-width: 991px) {
+                gap: 0 15px;
+            }
+            @media (max-width: 767px) {
+                gap: 35px;
+            }
+            @media (max-width: 575px) {
+                gap: 30px 15px;
+            }
             .statistic-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: calc(25% - 23px);
                 max-width: calc(25% - 23px);
+                @media (max-width: 991px) {
+                    width: calc(25% - 12px);
+                    max-width: calc(25% - 12px);
+                }
+                @media (max-width: 767px) {
+                    width: calc(50% - 18px);
+                    max-width: calc(50% - 18px);
+                }
+                @media (max-width: 575px) {
+                    width: calc(50% - 8px);
+                    max-width: calc(50% - 8px);
+                }
                 .number {
                     color: $green;
                     font-weight: 300;
@@ -31,6 +69,18 @@
                     width: 100%;
                     text-align: center;
                     @media (max-width: 1920px) {
+                        font-size: 5rem;
+                    }
+                    @media (max-width: 1399px) {
+                        margin-bottom: 10px;
+                    }
+                    @media (max-width: 767px) {
+                        font-size: 8rem;
+                    }
+                    @media (max-width: 575px) {
+                        font-size: 6rem;
+                    }
+                    @media (max-width: 399px) {
                         font-size: 5rem;
                     }
                 }
@@ -46,19 +96,44 @@
                     @media (max-width: 1920px) {
                         padding-left: 20px;
                     }
+                    @media (max-width: 1399px) {
+                        padding: 12px 10px 12px 15px;
+                    }
+                    @media (max-width: 991px) {
+                        padding: 10px 10px 10px 15px;
+                    }
+                    @media (max-width: 767px) {
+                        padding: 12px 10px 12px 20px;
+                        font-size: 0.9rem;
+                    }
+                    @media (max-width: 575px) {
+                        padding: 10px 10px 10px 15px;
+                    }
                 }
             }
         }
     }
     .about-info {
         margin-bottom: 100px;
+        @media (max-width: 767px) {
+            margin-bottom: 50px;
+        }
+        @media (max-width: 575px) {
+            margin-bottom: 30px;
+        }
         .about-info-text {
             padding-top: 40px;
             @media (max-width: 1920px) {
                 padding-top: 0;
             }
-            @media (min-width: 1600px) {
+            @media (min-width: 1800px) {
                 padding-left: 45px;
+            }
+            @media (max-width: 767px) {
+                margin-top: 30px;
+            }
+            @media (max-width: 399px) {
+                margin-top: 20px;
             }
             .about-info-title {
                 color: $green;
@@ -71,6 +146,9 @@
                 @media (max-width: 1599px) {
                     margin-bottom: 20px;
                 }
+                @media (max-width: 991px) {
+                    margin-bottom: 10px;
+                }
             }
             .about-info-item {
                 display: flex;
@@ -79,13 +157,22 @@
                 @media (max-width: 1920px) {
                     margin-bottom: 30px;
                 }
+                @media (max-width: 991px) {
+                    margin-bottom: 15px;
+                }
                 .about-info-item-number {
                     color: $green;
                     font-weight: 300;
                     font-size: 6rem;
                     line-height: 1;
+                    @media (max-width: 1799px) {
+                        font-size: 5.5rem;
+                    }
                     @media (max-width: 1599px) {
                         font-size: 5rem;
+                    }
+                    @media (max-width: 991px) {
+                        font-size: 4rem;
                     }
                 }
                 .about-info-item-text {
@@ -97,20 +184,45 @@
                     @media (max-width: 1920px) {
                         padding-left: 25px;
                     }
+                    @media (max-width: 991px) {
+                        padding-left: 10px;
+                        padding-top: 5px;
+                    }
                 }
             }
         }
     }
     .sertificates {
         padding-bottom: 150px;
+        @media (max-width: 1920px) {
+            padding-bottom: 100px;
+        }
+        @media (max-width: 767px) {
+            padding-bottom: 50px;
+        }
+        @media (max-width: 575px) {
+            padding-bottom: 30px;
+        }
         .sertificates-wrapper {
             position: relative;
         }
         .basic-title {
             color: $green;
             margin-bottom: 50px;
+            @media (max-width: 1920px) {
+                margin-bottom: 30px;
+            }
+            @media (max-width: 767px) {
+                margin-bottom: 20px;
+            }
+            @media (max-width: 575px) {
+                margin-bottom: 10px;
+            }
         }
         .certificates-swiper {
+            @media (max-width: 1199px) {
+                padding-bottom: 30px;
+            }
             .swiper-slide {
                 > a {
                     display: inline-block;
@@ -122,8 +234,14 @@
             }
         }
         .certificates-swiper-pagination {
-            @media (min-width: 992px) {
+            @media (min-width: 1200px) {
                 display: none;
+            }
+            @media (max-width: 1199px) {
+                bottom: 0;
+            }
+            .swiper-pagination-bullet {
+                background-color: $green;
             }
         }
         .certificates-swiper-button-prev,
@@ -135,6 +253,9 @@
             @media (max-width: 1599px) {
                 width: 50px;
                 height: 50px;
+            }
+            @media (max-width: 1199px) {
+                display: none;
             }
             &::after {
                 width: 100%;
@@ -152,12 +273,18 @@
         }
         .certificates-swiper-button-prev {
             left: -90px;
+            @media (max-width: 1399px) {
+                left: -60px;
+            }
             &::after {
                 transform: rotate(180deg);
             }
         }
         .certificates-swiper-button-next {
             right: -90px;
+            @media (max-width: 1399px) {
+                right: -60px;
+            }
         }
     }
     .clinic-gallery {
@@ -284,7 +411,7 @@
                 box-shadow: 0px 20px 24px -23px rgba(126, 152, 167, 0.5), 0px 36px 55.2888px -37px rgba(159, 193, 205, 0.8);
                 border-radius: 9px;
                 @media (max-width: 1920px) {
-                    padding: 30px;
+                    padding: 0 30px 30px 30px;
                 }
                 .pic {
                     width: 78px;
@@ -292,7 +419,7 @@
                     background-color: white;
                     box-shadow: 0px 20px 24px -23px #7E98A7, 0px 49px 55.2888px -37px #9FC1CD;
                     border-radius: 50%;
-                    transform: translateY(-28px);
+                    transform: translateY(-30%);
                     display: flex;
                     align-items: center;
                     justify-content: center;

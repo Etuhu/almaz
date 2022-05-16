@@ -89,6 +89,34 @@ const certificates = new Swiper(".certificates-swiper", {
 		el: ".certificates-swiper-pagination",
 		clickable: "true",
 	},
+    breakpoints: {
+        // when window width is >= 1200px
+        1400: {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+        },
+        1200: {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+            spaceBetween: 10,
+        },
+        400: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            spaceBetween: 10,
+        },
+        0: {
+            slidesPerView: 2.3,
+            slidesPerGroup: 1,
+            spaceBetween: 10,
+        },
+    },
 });
 
 const gallerySwiperBeer = new Swiper(".clinic-gallery-swiper", {
