@@ -3,9 +3,11 @@ let collapseMenu = header.querySelector(".navbar-collapse");
 function onWindowScroll() {
     if (window.pageYOffset > (header.clientHeight / 2)) {
       header.classList.add("fixed-top");
+      document.body.style.paddingTop = header.clientHeight * 1.3 + "px";
     }
     else {
       header.classList.remove("fixed-top")
+      document.body.style.paddingTop = 0;
     }
 }
 
@@ -27,6 +29,7 @@ collapseMenu.addEventListener("hidden.bs.collapse", function () {
         document.body.classList.remove("fixed");
     }
 });
+
 
 //Слайдеры
 const promoSwiper = new Swiper(".promo-swiper", {
@@ -119,7 +122,7 @@ const certificates = new Swiper(".certificates-swiper", {
     },
 });
 
-const gallerySwiperBeer = new Swiper(".clinic-gallery-swiper", {
+const gallerySwiper = new Swiper(".clinic-gallery-swiper", {
     speed: 1000,
     slidesPerView: 3,
     slidesPerGroup: 1,
@@ -187,6 +190,10 @@ function backToTop() {
 window.addEventListener('scroll', trackScroll);
 scrollButton.addEventListener('click', backToTop);
 
+//Подключение маски для поля ввода телефона
+$(document).ready(function(){
+    $(".phone-input").inputmask("+7 (999) 999 9999");
+});
 
 //Подключение кастомного скролла при ширине экрана больше 991 пикселя
 if ($(window).width() > 991) {

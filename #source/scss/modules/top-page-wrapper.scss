@@ -2,6 +2,9 @@
     .description {
         font-weight: 300;
         padding-top: 40px;
+        @media (max-width: 991px) {
+            padding-top: 0;
+        }
         .basic-title {
             color: $green;
             margin-bottom: 50px;
@@ -82,18 +85,6 @@
             @media (max-width: 575px) {
                 transform: translateX(calc(var(--bs-gutter-x) * .5));
             }
-            // @media (max-width: 991px) {
-            //     border-radius: 80px;
-            // }
-            // @media (max-width: 767px) {
-            //     border-radius: 50px;
-            // }
-            // @media (max-width: 499px) {
-            //     border-radius: 35px;
-            // }
-            // @media (max-width: 449px) {
-            //     border-radius: 30px;
-            // }
             .green-block-image {
                 position: absolute;
                 top: -90px;
@@ -121,6 +112,15 @@
                 @media (max-width: 399px) {
                     top: -20px;
                 }
+            }
+        }
+        .content.green-block.green-block--bottom {
+            .green-block-image {
+                position: absolute;
+                top: unset;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
             }
         }
     }
