@@ -209,3 +209,51 @@ if ($(window).width() > 991) {
         });
     })(jQuery);
 };
+
+//Скрипты, завязанные на карточках врачей
+document.addEventListener("DOMContentLoaded", function () {
+    let doctors = document.querySelectorAll(".staff-list .staff-item");
+    let doctorsArray = Array.from(doctors);
+    let doctorPage = document.querySelector(".staff-item-page-wrapper");
+    let doctorPagePost = document.querySelector(".staff-item-page-wrapper .staff-info .post");
+    let recordForm = document.querySelector(".record-form");
+    let formDoctorName = recordForm.querySelector(".doctor-name");
+    let formDoctorNameOptions = formDoctorName.querySelectorAll("option");
+    let recordDoctorButtons = document.querySelectorAll('.staff-item .record-button');
+
+
+//Удаление кнопки записаться для сотрудников, не являющихся врачами
+    function removeOrderButton (doctor, post) {
+        if (!post.innerText.toLowerCase().includes("врач")) {
+            doctor.querySelector(".record-button").remove();
+        }
+    };
+
+//Выбирает из списка возможной записи имя соответствующего врача, к которому хотят записаться
+    recordDoctorButtons.forEach(function (recordButton) { // Для каждой кнопки
+        let doctorCard = recordButton.closest(".staff-item");
+        let doctorName = doctorCard.querySelector(".title");
+        recordButton.onclick = function () { // Слушаем нажатие
+            for (let i = 0; i < formDoctorNameOptions.length; i++) {
+                if (formDoctorNameOptions[i].value.includes(doctorName.innerText)) {
+                    formDoctorName.value = doctorName.innerText;
+                    break;
+                } else {
+                    formDoctorName.value = formDoctorNameOptions[0].innerText; // Если нажата, то выбирает тот option, который в тексте кнопки.
+                }
+            };
+        }
+    });
+
+    doctorsArray.forEach(function(doctor) {
+        if (doctorsArray.length > 0) {
+            let post = doctor.querySelector(".content .post");
+            removeOrderButton(doctor, post);
+        }
+    });
+
+    if (doctorPage) {
+        console.log(doctorPagePost);
+        removeOrderButton(doctorPage, doctorPagePost);
+    };
+});

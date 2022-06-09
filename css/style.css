@@ -4467,15 +4467,23 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   background-image: linear-gradient(180deg, #25AE67 62.87%, #027A3C 160.59%);
   padding-top: 120px;
   color: white;
+  scroll-margin-top: 130px;
 }
 @media (max-width: 1920px) {
   .order-form-block {
     padding-top: 90px;
+    scroll-margin-top: 120px;
   }
 }
 @media (max-width: 1399px) {
   .order-form-block {
     padding-top: 60px;
+    scroll-margin-top: 110px;
+  }
+}
+@media (max-width: 991px) {
+  .order-form-block {
+    scroll-margin-top: 70px;
   }
 }
 @media (max-width: 575px) {
@@ -4583,7 +4591,11 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
 }
 .order-form-block .order-form-wrapper form input[type=text],
 .order-form-block .order-form-wrapper form input[type=number],
-.order-form-block .order-form-wrapper form input[type=select],
+.order-form-block .order-form-wrapper form input[type=date],
+.order-form-block .order-form-wrapper form input[type=datetime],
+.order-form-block .order-form-wrapper form input[type=datetime-local],
+.order-form-block .order-form-wrapper form select,
+.order-form-block .order-form-wrapper form option,
 .order-form-block .order-form-wrapper form textarea {
   background-color: rgba(255, 255, 255, 0);
   border: 0;
@@ -4600,7 +4612,11 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
 @media (max-width: 1920px) {
   .order-form-block .order-form-wrapper form input[type=text],
 .order-form-block .order-form-wrapper form input[type=number],
-.order-form-block .order-form-wrapper form input[type=select],
+.order-form-block .order-form-wrapper form input[type=date],
+.order-form-block .order-form-wrapper form input[type=datetime],
+.order-form-block .order-form-wrapper form input[type=datetime-local],
+.order-form-block .order-form-wrapper form select,
+.order-form-block .order-form-wrapper form option,
 .order-form-block .order-form-wrapper form textarea {
     padding-left: 8px;
     padding-right: 8px;
@@ -4609,8 +4625,16 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
 .order-form-block .order-form-wrapper form input[type=text]:focus, .order-form-block .order-form-wrapper form input[type=text]:hover,
 .order-form-block .order-form-wrapper form input[type=number]:focus,
 .order-form-block .order-form-wrapper form input[type=number]:hover,
-.order-form-block .order-form-wrapper form input[type=select]:focus,
-.order-form-block .order-form-wrapper form input[type=select]:hover,
+.order-form-block .order-form-wrapper form input[type=date]:focus,
+.order-form-block .order-form-wrapper form input[type=date]:hover,
+.order-form-block .order-form-wrapper form input[type=datetime]:focus,
+.order-form-block .order-form-wrapper form input[type=datetime]:hover,
+.order-form-block .order-form-wrapper form input[type=datetime-local]:focus,
+.order-form-block .order-form-wrapper form input[type=datetime-local]:hover,
+.order-form-block .order-form-wrapper form select:focus,
+.order-form-block .order-form-wrapper form select:hover,
+.order-form-block .order-form-wrapper form option:focus,
+.order-form-block .order-form-wrapper form option:hover,
 .order-form-block .order-form-wrapper form textarea:focus,
 .order-form-block .order-form-wrapper form textarea:hover {
   box-shadow: unset;
@@ -4624,15 +4648,27 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
 .order-form-block .order-form-wrapper form input[type=text]:focus::placeholder, .order-form-block .order-form-wrapper form input[type=text]:hover::placeholder,
 .order-form-block .order-form-wrapper form input[type=number]:focus::placeholder,
 .order-form-block .order-form-wrapper form input[type=number]:hover::placeholder,
-.order-form-block .order-form-wrapper form input[type=select]:focus::placeholder,
-.order-form-block .order-form-wrapper form input[type=select]:hover::placeholder,
+.order-form-block .order-form-wrapper form input[type=date]:focus::placeholder,
+.order-form-block .order-form-wrapper form input[type=date]:hover::placeholder,
+.order-form-block .order-form-wrapper form input[type=datetime]:focus::placeholder,
+.order-form-block .order-form-wrapper form input[type=datetime]:hover::placeholder,
+.order-form-block .order-form-wrapper form input[type=datetime-local]:focus::placeholder,
+.order-form-block .order-form-wrapper form input[type=datetime-local]:hover::placeholder,
+.order-form-block .order-form-wrapper form select:focus::placeholder,
+.order-form-block .order-form-wrapper form select:hover::placeholder,
+.order-form-block .order-form-wrapper form option:focus::placeholder,
+.order-form-block .order-form-wrapper form option:hover::placeholder,
 .order-form-block .order-form-wrapper form textarea:focus::placeholder,
 .order-form-block .order-form-wrapper form textarea:hover::placeholder {
   opacity: 0.8;
 }
 .order-form-block .order-form-wrapper form input[type=text]::placeholder,
 .order-form-block .order-form-wrapper form input[type=number]::placeholder,
-.order-form-block .order-form-wrapper form input[type=select]::placeholder,
+.order-form-block .order-form-wrapper form input[type=date]::placeholder,
+.order-form-block .order-form-wrapper form input[type=datetime]::placeholder,
+.order-form-block .order-form-wrapper form input[type=datetime-local]::placeholder,
+.order-form-block .order-form-wrapper form select::placeholder,
+.order-form-block .order-form-wrapper form option::placeholder,
 .order-form-block .order-form-wrapper form textarea::placeholder {
   color: white;
   font-weight: 300;
@@ -4647,6 +4683,10 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   .order-form-block .order-form-wrapper form textarea {
     min-height: 130px;
   }
+}
+.order-form-block .order-form-wrapper form option {
+  background-color: #027A3C;
+  font-size: 1rem;
 }
 .order-form-block .order-form-wrapper form .basic-button {
   width: 100%;
