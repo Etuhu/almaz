@@ -1975,6 +1975,7 @@ a {
 ol.breadcrumb {
   padding-top: 40px;
   padding-bottom: 50px;
+  margin-bottom: 0;
 }
 @media (max-width: 1920px) {
   ol.breadcrumb {
@@ -4462,7 +4463,7 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   }
 }
 
-.order-form-block {
+.record-form-block {
   background-color: #027A3C;
   background-image: linear-gradient(180deg, #25AE67 62.87%, #027A3C 160.59%);
   padding-top: 120px;
@@ -4470,86 +4471,86 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   scroll-margin-top: 130px;
 }
 @media (max-width: 1920px) {
-  .order-form-block {
+  .record-form-block {
     padding-top: 90px;
     scroll-margin-top: 120px;
   }
 }
 @media (max-width: 1399px) {
-  .order-form-block {
+  .record-form-block {
     padding-top: 60px;
     scroll-margin-top: 110px;
   }
 }
 @media (max-width: 991px) {
-  .order-form-block {
+  .record-form-block {
     scroll-margin-top: 70px;
   }
 }
 @media (max-width: 575px) {
-  .order-form-block {
+  .record-form-block {
     padding-top: 40px;
   }
 }
-.order-form-block .order-form-wrapper {
+.record-form-block .record-form-wrapper {
   padding-bottom: 50px;
 }
 @media (max-width: 575px) {
-  .order-form-block .order-form-wrapper {
+  .record-form-block .record-form-wrapper {
     padding-bottom: 35px;
   }
 }
-.order-form-block .order-form-wrapper .order-form-title {
+.record-form-block .record-form-wrapper .record-form-title {
   margin-bottom: 30px;
 }
 @media (max-width: 1920px) {
-  .order-form-block .order-form-wrapper .order-form-title {
+  .record-form-block .record-form-wrapper .record-form-title {
     margin-bottom: 15px;
   }
 }
 @media (max-width: 1399px) {
-  .order-form-block .order-form-wrapper .order-form-title {
+  .record-form-block .record-form-wrapper .record-form-title {
     margin-bottom: 10px;
   }
 }
-.order-form-block .order-form-wrapper form {
+.record-form-block .record-form-wrapper form {
   margin-top: 70px;
 }
 @media (max-width: 1920px) {
-  .order-form-block .order-form-wrapper form {
+  .record-form-block .record-form-wrapper form {
     margin-top: 50px;
   }
 }
 @media (max-width: 1399px) {
-  .order-form-block .order-form-wrapper form {
+  .record-form-block .record-form-wrapper form {
     margin-top: 30px;
   }
 }
-.order-form-block .order-form-wrapper form > .row {
+.record-form-block .record-form-wrapper form > .row {
   margin-bottom: 30px;
 }
 @media (max-width: 575px) {
-  .order-form-block .order-form-wrapper form > .row {
+  .record-form-block .record-form-wrapper form > .row {
     margin-bottom: 15px;
   }
 }
-.order-form-block .order-form-wrapper form .mb-3 {
+.record-form-block .record-form-wrapper form .mb-3 {
   display: flex;
   align-items: center;
 }
-.order-form-block .order-form-wrapper form .order-form-comment .mb-3 {
+.record-form-block .record-form-wrapper form .record-form-comment .mb-3 {
   align-items: flex-start;
 }
-.order-form-block .order-form-wrapper form .order-form-buttons {
+.record-form-block .record-form-wrapper form .record-form-buttons {
   align-items: center;
 }
 @media (max-width: 991px) {
-  .order-form-block .order-form-wrapper form .order-form-buttons .basic-button {
+  .record-form-block .record-form-wrapper form .record-form-buttons .basic-button {
     padding: 15px;
     font-size: 1rem;
   }
 }
-.order-form-block .order-form-wrapper form label {
+.record-form-block .record-form-wrapper form label {
   font-weight: 500;
   flex-grow: 1;
   flex-shrink: 0;
@@ -4557,46 +4558,46 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   margin-bottom: 0;
 }
 @media (max-width: 1920px) {
-  .order-form-block .order-form-wrapper form label {
+  .record-form-block .record-form-wrapper form label {
     padding-right: 10px;
   }
 }
 @media (max-width: 1399px) {
-  .order-form-block .order-form-wrapper form label {
+  .record-form-block .record-form-wrapper form label {
     width: 25%;
     max-width: 25%;
   }
 }
 @media (max-width: 991px) {
-  .order-form-block .order-form-wrapper form label {
+  .record-form-block .record-form-wrapper form label {
     width: 20%;
     max-width: 20%;
   }
 }
 @media (max-width: 575px) {
-  .order-form-block .order-form-wrapper form label {
+  .record-form-block .record-form-wrapper form label {
     width: 25%;
     max-width: 25%;
   }
 }
 @media (max-width: 399px) {
-  .order-form-block .order-form-wrapper form label {
+  .record-form-block .record-form-wrapper form label {
     width: 27%;
     max-width: 27%;
   }
 }
-.order-form-block .order-form-wrapper form .form-control {
+.record-form-block .record-form-wrapper form .form-control {
   flex-shrink: 1;
   flex-grow: 0;
 }
-.order-form-block .order-form-wrapper form input[type=text],
-.order-form-block .order-form-wrapper form input[type=number],
-.order-form-block .order-form-wrapper form input[type=date],
-.order-form-block .order-form-wrapper form input[type=datetime],
-.order-form-block .order-form-wrapper form input[type=datetime-local],
-.order-form-block .order-form-wrapper form select,
-.order-form-block .order-form-wrapper form option,
-.order-form-block .order-form-wrapper form textarea {
+.record-form-block .record-form-wrapper form input[type=text],
+.record-form-block .record-form-wrapper form input[type=number],
+.record-form-block .record-form-wrapper form input[type=date],
+.record-form-block .record-form-wrapper form input[type=datetime],
+.record-form-block .record-form-wrapper form input[type=datetime-local],
+.record-form-block .record-form-wrapper form select,
+.record-form-block .record-form-wrapper form option,
+.record-form-block .record-form-wrapper form textarea {
   background-color: rgba(255, 255, 255, 0);
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7);
@@ -4610,33 +4611,33 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   /* Edge */
 }
 @media (max-width: 1920px) {
-  .order-form-block .order-form-wrapper form input[type=text],
-.order-form-block .order-form-wrapper form input[type=number],
-.order-form-block .order-form-wrapper form input[type=date],
-.order-form-block .order-form-wrapper form input[type=datetime],
-.order-form-block .order-form-wrapper form input[type=datetime-local],
-.order-form-block .order-form-wrapper form select,
-.order-form-block .order-form-wrapper form option,
-.order-form-block .order-form-wrapper form textarea {
+  .record-form-block .record-form-wrapper form input[type=text],
+.record-form-block .record-form-wrapper form input[type=number],
+.record-form-block .record-form-wrapper form input[type=date],
+.record-form-block .record-form-wrapper form input[type=datetime],
+.record-form-block .record-form-wrapper form input[type=datetime-local],
+.record-form-block .record-form-wrapper form select,
+.record-form-block .record-form-wrapper form option,
+.record-form-block .record-form-wrapper form textarea {
     padding-left: 8px;
     padding-right: 8px;
   }
 }
-.order-form-block .order-form-wrapper form input[type=text]:focus, .order-form-block .order-form-wrapper form input[type=text]:hover,
-.order-form-block .order-form-wrapper form input[type=number]:focus,
-.order-form-block .order-form-wrapper form input[type=number]:hover,
-.order-form-block .order-form-wrapper form input[type=date]:focus,
-.order-form-block .order-form-wrapper form input[type=date]:hover,
-.order-form-block .order-form-wrapper form input[type=datetime]:focus,
-.order-form-block .order-form-wrapper form input[type=datetime]:hover,
-.order-form-block .order-form-wrapper form input[type=datetime-local]:focus,
-.order-form-block .order-form-wrapper form input[type=datetime-local]:hover,
-.order-form-block .order-form-wrapper form select:focus,
-.order-form-block .order-form-wrapper form select:hover,
-.order-form-block .order-form-wrapper form option:focus,
-.order-form-block .order-form-wrapper form option:hover,
-.order-form-block .order-form-wrapper form textarea:focus,
-.order-form-block .order-form-wrapper form textarea:hover {
+.record-form-block .record-form-wrapper form input[type=text]:focus, .record-form-block .record-form-wrapper form input[type=text]:hover,
+.record-form-block .record-form-wrapper form input[type=number]:focus,
+.record-form-block .record-form-wrapper form input[type=number]:hover,
+.record-form-block .record-form-wrapper form input[type=date]:focus,
+.record-form-block .record-form-wrapper form input[type=date]:hover,
+.record-form-block .record-form-wrapper form input[type=datetime]:focus,
+.record-form-block .record-form-wrapper form input[type=datetime]:hover,
+.record-form-block .record-form-wrapper form input[type=datetime-local]:focus,
+.record-form-block .record-form-wrapper form input[type=datetime-local]:hover,
+.record-form-block .record-form-wrapper form select:focus,
+.record-form-block .record-form-wrapper form select:hover,
+.record-form-block .record-form-wrapper form option:focus,
+.record-form-block .record-form-wrapper form option:hover,
+.record-form-block .record-form-wrapper form textarea:focus,
+.record-form-block .record-form-wrapper form textarea:hover {
   box-shadow: unset;
   border-color: rgb(255, 255, 255);
   /* WebKit, Edge */
@@ -4645,131 +4646,131 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   /* IE 10-11 */
   /* Edge */
 }
-.order-form-block .order-form-wrapper form input[type=text]:focus::placeholder, .order-form-block .order-form-wrapper form input[type=text]:hover::placeholder,
-.order-form-block .order-form-wrapper form input[type=number]:focus::placeholder,
-.order-form-block .order-form-wrapper form input[type=number]:hover::placeholder,
-.order-form-block .order-form-wrapper form input[type=date]:focus::placeholder,
-.order-form-block .order-form-wrapper form input[type=date]:hover::placeholder,
-.order-form-block .order-form-wrapper form input[type=datetime]:focus::placeholder,
-.order-form-block .order-form-wrapper form input[type=datetime]:hover::placeholder,
-.order-form-block .order-form-wrapper form input[type=datetime-local]:focus::placeholder,
-.order-form-block .order-form-wrapper form input[type=datetime-local]:hover::placeholder,
-.order-form-block .order-form-wrapper form select:focus::placeholder,
-.order-form-block .order-form-wrapper form select:hover::placeholder,
-.order-form-block .order-form-wrapper form option:focus::placeholder,
-.order-form-block .order-form-wrapper form option:hover::placeholder,
-.order-form-block .order-form-wrapper form textarea:focus::placeholder,
-.order-form-block .order-form-wrapper form textarea:hover::placeholder {
+.record-form-block .record-form-wrapper form input[type=text]:focus::placeholder, .record-form-block .record-form-wrapper form input[type=text]:hover::placeholder,
+.record-form-block .record-form-wrapper form input[type=number]:focus::placeholder,
+.record-form-block .record-form-wrapper form input[type=number]:hover::placeholder,
+.record-form-block .record-form-wrapper form input[type=date]:focus::placeholder,
+.record-form-block .record-form-wrapper form input[type=date]:hover::placeholder,
+.record-form-block .record-form-wrapper form input[type=datetime]:focus::placeholder,
+.record-form-block .record-form-wrapper form input[type=datetime]:hover::placeholder,
+.record-form-block .record-form-wrapper form input[type=datetime-local]:focus::placeholder,
+.record-form-block .record-form-wrapper form input[type=datetime-local]:hover::placeholder,
+.record-form-block .record-form-wrapper form select:focus::placeholder,
+.record-form-block .record-form-wrapper form select:hover::placeholder,
+.record-form-block .record-form-wrapper form option:focus::placeholder,
+.record-form-block .record-form-wrapper form option:hover::placeholder,
+.record-form-block .record-form-wrapper form textarea:focus::placeholder,
+.record-form-block .record-form-wrapper form textarea:hover::placeholder {
   opacity: 0.8;
 }
-.order-form-block .order-form-wrapper form input[type=text]::placeholder,
-.order-form-block .order-form-wrapper form input[type=number]::placeholder,
-.order-form-block .order-form-wrapper form input[type=date]::placeholder,
-.order-form-block .order-form-wrapper form input[type=datetime]::placeholder,
-.order-form-block .order-form-wrapper form input[type=datetime-local]::placeholder,
-.order-form-block .order-form-wrapper form select::placeholder,
-.order-form-block .order-form-wrapper form option::placeholder,
-.order-form-block .order-form-wrapper form textarea::placeholder {
+.record-form-block .record-form-wrapper form input[type=text]::placeholder,
+.record-form-block .record-form-wrapper form input[type=number]::placeholder,
+.record-form-block .record-form-wrapper form input[type=date]::placeholder,
+.record-form-block .record-form-wrapper form input[type=datetime]::placeholder,
+.record-form-block .record-form-wrapper form input[type=datetime-local]::placeholder,
+.record-form-block .record-form-wrapper form select::placeholder,
+.record-form-block .record-form-wrapper form option::placeholder,
+.record-form-block .record-form-wrapper form textarea::placeholder {
   color: white;
   font-weight: 300;
   opacity: 0.5;
 }
-.order-form-block .order-form-wrapper form textarea {
+.record-form-block .record-form-wrapper form textarea {
   min-height: 150px;
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 6px;
 }
 @media (max-width: 1199px) {
-  .order-form-block .order-form-wrapper form textarea {
+  .record-form-block .record-form-wrapper form textarea {
     min-height: 130px;
   }
 }
-.order-form-block .order-form-wrapper form option {
+.record-form-block .record-form-wrapper form option {
   background-color: #027A3C;
   font-size: 1rem;
 }
-.order-form-block .order-form-wrapper form .basic-button {
+.record-form-block .record-form-wrapper form .basic-button {
   width: 100%;
   font-weight: 300;
   border: 0;
 }
-.order-form-block .order-form-wrapper .note {
+.record-form-block .record-form-wrapper .note {
   margin-top: 30px;
   font-size: 0.8rem;
 }
-.order-form-block .order-form-wrapper .social-wrapper {
+.record-form-block .record-form-wrapper .social-wrapper {
   display: flex;
   align-items: center;
 }
 @media (max-width: 767px) {
-  .order-form-block .order-form-wrapper .social-wrapper {
+  .record-form-block .record-form-wrapper .social-wrapper {
     flex-direction: column;
   }
 }
-.order-form-block .order-form-wrapper .social-wrapper > span {
+.record-form-block .record-form-wrapper .social-wrapper > span {
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.order-form-block .order-form-wrapper .social-wrapper .social {
+.record-form-block .record-form-wrapper .social-wrapper .social {
   display: flex;
   align-items: center;
   margin-left: 30px;
 }
 @media (max-width: 1920px) {
-  .order-form-block .order-form-wrapper .social-wrapper .social {
+  .record-form-block .record-form-wrapper .social-wrapper .social {
     margin-left: 20px;
   }
 }
 @media (max-width: 1699px) {
-  .order-form-block .order-form-wrapper .social-wrapper .social {
+  .record-form-block .record-form-wrapper .social-wrapper .social {
     margin-left: 15px;
   }
 }
 @media (max-width: 767px) {
-  .order-form-block .order-form-wrapper .social-wrapper .social {
+  .record-form-block .record-form-wrapper .social-wrapper .social {
     margin-left: 0;
   }
 }
-.order-form-block .order-form-wrapper .social-wrapper .social .social-item + .social-item {
+.record-form-block .record-form-wrapper .social-wrapper .social .social-item + .social-item {
   margin-left: 27px;
 }
 @media (max-width: 1920px) {
-  .order-form-block .order-form-wrapper .social-wrapper .social .social-item + .social-item {
+  .record-form-block .record-form-wrapper .social-wrapper .social .social-item + .social-item {
     margin-left: 20px;
   }
 }
 @media (max-width: 1699px) {
-  .order-form-block .order-form-wrapper .social-wrapper .social .social-item + .social-item {
+  .record-form-block .record-form-wrapper .social-wrapper .social .social-item + .social-item {
     margin-left: 10px;
   }
 }
-.order-form-block .order-form-wrapper .social-wrapper .social .social-item img {
+.record-form-block .record-form-wrapper .social-wrapper .social .social-item img {
   transition: 0.3s ease;
 }
 @media (max-width: 991px) {
-  .order-form-block .order-form-wrapper .social-wrapper .social .social-item img {
+  .record-form-block .record-form-wrapper .social-wrapper .social .social-item img {
     width: 50px;
   }
 }
-.order-form-block .order-form-wrapper .social-wrapper .social .social-item:hover img {
+.record-form-block .record-form-wrapper .social-wrapper .social .social-item:hover img {
   filter: drop-shadow(0 0 5px rgb(255, 255, 255));
   transition: 0.3s ease;
 }
-.order-form-block .order-form-pic {
+.record-form-block .record-form-pic {
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
 @media (max-width: 991px) {
-  .order-form-block .order-form-pic {
+  .record-form-block .record-form-pic {
     display: none;
   }
 }
-.order-form-block .order-form-pic > img {
+.record-form-block .record-form-pic > img {
   width: 100%;
 }
 @media (max-width: 1199px) {
-  .order-form-block .order-form-pic > img {
+  .record-form-block .record-form-pic > img {
     width: 80%;
   }
 }
@@ -6294,6 +6295,153 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
 .staff-page .staff-list .staff-item:hover .buttons .basic-button {
   opacity: 1;
   transition: 0.3s ease;
+}
+
+.staff-item-wrapper .staff-item-content {
+  padding-bottom: 50px;
+  padding-top: 70px;
+  background-color: white;
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .post {
+  font-size: 0.75rem;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .title {
+  color: #027A3C;
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+  background-image: unset;
+  background-color: #027A3C;
+  border-radius: 40px;
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 15px 28px;
+}
+@media (max-width: 1920px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    padding: 13px 25px;
+  }
+}
+@media (max-width: 1899px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    padding: 11px 20px;
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 1599px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    padding: 10px 18px;
+  }
+}
+@media (max-width: 1399px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    font-size: 1rem;
+    padding: 11px 23px;
+  }
+}
+@media (max-width: 1299px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 767px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    opacity: 1;
+  }
+}
+@media (max-width: 575px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    padding: 8px 17px;
+  }
+}
+@media (max-width: 499px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button {
+    font-size: 0.75rem;
+  }
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button:hover, .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button:focus {
+  background-image: unset;
+  background-color: #25AE67;
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button > span {
+  font-size: 0.85rem;
+  line-height: 1;
+  margin-left: 5px;
+}
+@media (max-width: 1899px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button svg {
+    width: 10px;
+    height: auto;
+  }
+}
+@media (max-width: 499px) {
+  .staff-item-wrapper .staff-item-bio .staff-item-bio-text .title-wrapper .record-button svg {
+    width: 8px;
+  }
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-text .description {
+  line-height: 1.5;
+  margin-bottom: 45px;
+}
+.staff-item-wrapper .staff-item-bio .staff-item-bio-pic {
+  text-align: center;
+}
+.staff-item-wrapper .staff-item-services .staff-item-services-title,
+.staff-item-wrapper .staff-item-services a {
+  color: #54544F;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+.staff-item-wrapper .staff-item-services a:hover, .staff-item-wrapper .staff-item-services a:focus {
+  opacity: 0.7;
+  color: #027A3C;
+}
+.staff-item-wrapper .staff-item-services .staff-item-services-list {
+  column-count: 3;
+  margin-top: 30px;
+  padding-left: 30px;
+}
+.staff-item-wrapper .staff-item-services .staff-item-services-list > li {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.staff-item-wrapper .staff-item-documents {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.staff-item-wrapper .staff-item-documents > .container {
+  position: relative;
+}
+.staff-item-wrapper .staff-item-documents .staff-certificates-swiper-button-prev,
+.staff-item-wrapper .staff-item-documents .staff-certificates-swiper-button-next {
+  color: #828282;
+}
+@media (max-width: 991px) {
+  .staff-item-wrapper .staff-item-documents .staff-certificates-swiper-button-prev,
+.staff-item-wrapper .staff-item-documents .staff-certificates-swiper-button-next {
+    display: none;
+  }
+}
+.staff-item-wrapper .staff-item-documents .staff-certificates-swiper-button-prev {
+  left: -25px;
+}
+.staff-item-wrapper .staff-item-documents .staff-certificates-swiper-button-next {
+  right: -25px;
+}
+@media (min-width: 992px) {
+  .staff-item-wrapper .staff-item-documents .staff-certificates-swiper-pagination {
+    display: none;
+  }
 }
 
 .footer-wrapper {

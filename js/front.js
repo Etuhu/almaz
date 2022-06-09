@@ -93,7 +93,6 @@ const certificates = new Swiper(".certificates-swiper", {
 		clickable: "true",
 	},
     breakpoints: {
-        // when window width is >= 1200px
         1400: {
             slidesPerView: 4,
             slidesPerGroup: 1,
@@ -141,7 +140,6 @@ const gallerySwiper = new Swiper(".clinic-gallery-swiper", {
         clickable: true,
     },
     breakpoints: {
-        // when window width is >= 1200px
         1200: {
             slidesPerView: 3,
             slidesPerGroup: 1,
@@ -158,6 +156,50 @@ const gallerySwiper = new Swiper(".clinic-gallery-swiper", {
         300: {
             slidesPerView: 3,
             slidesPerGroup: 1,
+        },
+    },
+});
+
+const staffSertificates = new Swiper(".staff-certificates-swiper", {
+	slidesPerView: 6,
+	slidesPerGroup: 1,
+	speed: 300,
+	simulateTouch: true,
+	spaceBetween: 30,
+	watchOverflow: true,
+	navigation: {
+		nextEl: ".staff-certificates-swiper-button-next",
+		prevEl: ".staff-certificates-swiper-button-prev",
+	},
+	pagination: {
+		el: ".staff-certificates-swiper-pagination",
+		clickable: "true",
+	},
+    breakpoints: {
+        1400: {
+            slidesPerView: 6,
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+        },
+        1200: {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+        },
+        992: {
+            slidesPerView: 4,
+            slidesPerGroup: 1,
+            spaceBetween: 10,
+        },
+        400: {
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            spaceBetween: 10,
+        },
+        0: {
+            slidesPerView: 2.3,
+            slidesPerGroup: 1,
+            spaceBetween: 10,
         },
     },
 });
@@ -212,15 +254,22 @@ if ($(window).width() > 991) {
 
 //Скрипты, завязанные на карточках врачей
 document.addEventListener("DOMContentLoaded", function () {
-    let doctors = document.querySelectorAll(".staff-list .staff-item");
+    let doctors = document.querySelectorAll(".staff-list .js-doctor-card");
     let doctorsArray = Array.from(doctors);
+    let doctorName = document.querySelector(".staff-list .js-doctor-card .title");
     let doctorPage = document.querySelector(".staff-item-page-wrapper");
     let doctorPagePost = document.querySelector(".staff-item-page-wrapper .staff-info .post");
     let recordForm = document.querySelector(".record-form");
     let formDoctorName = recordForm.querySelector(".doctor-name");
     let formDoctorNameOptions = formDoctorName.querySelectorAll("option");
-    let recordDoctorButtons = document.querySelectorAll('.staff-item .record-button');
+    let recordDoctorButtons = document.querySelectorAll(".js-doctor-card .record-button");
 
+//Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
+function separateStaffName (doctor) {
+    let text = doctor.querySelector(".title").innerText.trim().split(" ", 1);
+    let first = text.shift();
+    return ("<span>"+ first + "</span> ") + text.join(" ");
+};
 
 //Удаление кнопки записаться для сотрудников, не являющихся врачами
     function removeOrderButton (doctor, post) {
@@ -231,7 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Выбирает из списка возможной записи имя соответствующего врача, к которому хотят записаться
     recordDoctorButtons.forEach(function (recordButton) { // Для каждой кнопки
-        let doctorCard = recordButton.closest(".staff-item");
+        let doctorCard = recordButton.closest(".js-doctor-card");
         let doctorName = doctorCard.querySelector(".title");
         recordButton.onclick = function () { // Слушаем нажатие
             for (let i = 0; i < formDoctorNameOptions.length; i++) {
@@ -250,6 +299,7 @@ document.addEventListener("DOMContentLoaded", function () {
             let post = doctor.querySelector(".content .post");
             removeOrderButton(doctor, post);
         }
+        separateStaffName(doctor);
     });
 
     if (doctorPage) {
@@ -257,3 +307,19 @@ document.addEventListener("DOMContentLoaded", function () {
         removeOrderButton(doctorPage, doctorPagePost);
     };
 });
+
+
+//Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
+// function separateStaffName (doctor) {
+//     let text = doctor.querySelector(".title").innerText.trim().split(" ");
+//     let first = text.shift();
+//     return ("<span>"+ first + "</span> ") + text.join(" ");
+// };
+
+// if ($(".staff-list .js-doctor-card .title")) {
+//     $(".staff-list .js-doctor-card .title").html(function(){
+//         var text= $(this).text().trim().split(" ");
+//         var first = text.shift();
+//         return ("<span>"+ first + "</span> ") + text.join(" ");
+//     });
+// }
