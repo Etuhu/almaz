@@ -164,6 +164,9 @@ const staffSertificates = new Swiper(".staff-certificates-swiper", {
 	slidesPerView: 6,
 	slidesPerGroup: 1,
 	speed: 300,
+	// autoplay: {
+	// 	delay: 3000,
+	// },
 	simulateTouch: true,
 	spaceBetween: 30,
 	watchOverflow: true,
@@ -174,6 +177,8 @@ const staffSertificates = new Swiper(".staff-certificates-swiper", {
 	pagination: {
 		el: ".staff-certificates-swiper-pagination",
 		clickable: "true",
+		dynamicBullets: true,
+        dynamicMainBullets: 1,
 	},
     breakpoints: {
         1400: {
@@ -182,12 +187,12 @@ const staffSertificates = new Swiper(".staff-certificates-swiper", {
             spaceBetween: 30,
         },
         1200: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             slidesPerGroup: 1,
             spaceBetween: 20,
         },
         992: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             slidesPerGroup: 1,
             spaceBetween: 10,
         },
@@ -256,9 +261,8 @@ if ($(window).width() > 991) {
 document.addEventListener("DOMContentLoaded", function () {
     let doctors = document.querySelectorAll(".staff-list .js-doctor-card");
     let doctorsArray = Array.from(doctors);
-    let doctorName = document.querySelector(".staff-list .js-doctor-card .title");
-    let doctorPage = document.querySelector(".staff-item-page-wrapper");
-    let doctorPagePost = document.querySelector(".staff-item-page-wrapper .staff-info .post");
+    let doctorPage = document.querySelector(".staff-item-wrapper");
+    let doctorPagePost = document.querySelector(".staff-item-wrapper .post");
     let recordForm = document.querySelector(".record-form");
     let formDoctorName = recordForm.querySelector(".doctor-name");
     let formDoctorNameOptions = formDoctorName.querySelectorAll("option");
@@ -284,42 +288,36 @@ function separateStaffName (doctor) {
         let doctorName = doctorCard.querySelector(".title");
         recordButton.onclick = function () { // Слушаем нажатие
             for (let i = 0; i < formDoctorNameOptions.length; i++) {
-                if (formDoctorNameOptions[i].value.includes(doctorName.innerText)) {
-                    formDoctorName.value = doctorName.innerText;
+                if (formDoctorNameOptions[i].value.includes(doctorName.textContent)) {
+                    formDoctorName.value = doctorName.textContent;
                     break;
                 } else {
-                    formDoctorName.value = formDoctorNameOptions[0].innerText; // Если нажата, то выбирает тот option, который в тексте кнопки.
+                    formDoctorName.value = formDoctorNameOptions[0].value; // Если нажата, то выбирает тот option, который в тексте кнопки.
                 }
             };
         }
     });
 
+//Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
+    function separateStaffName (title) {
+        let text = title.innerText.trim().split(" ");
+        let first = text.shift();
+        title.innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
+        return title;
+    };
+
+//Вызываем функции на странице со списком специалистов
     doctorsArray.forEach(function(doctor) {
         if (doctorsArray.length > 0) {
             let post = doctor.querySelector(".content .post");
             removeOrderButton(doctor, post);
         }
-        separateStaffName(doctor);
+        separateStaffName(doctor.querySelector(".title a"));
     });
 
+//Вызываем функции на странице отдельного специалиста
     if (doctorPage) {
-        console.log(doctorPagePost);
         removeOrderButton(doctorPage, doctorPagePost);
+        separateStaffName(doctorPage.querySelector(".title"));
     };
 });
-
-
-//Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
-// function separateStaffName (doctor) {
-//     let text = doctor.querySelector(".title").innerText.trim().split(" ");
-//     let first = text.shift();
-//     return ("<span>"+ first + "</span> ") + text.join(" ");
-// };
-
-// if ($(".staff-list .js-doctor-card .title")) {
-//     $(".staff-list .js-doctor-card .title").html(function(){
-//         var text= $(this).text().trim().split(" ");
-//         var first = text.shift();
-//         return ("<span>"+ first + "</span> ") + text.join(" ");
-//     });
-// }
