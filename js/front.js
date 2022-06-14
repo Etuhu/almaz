@@ -283,37 +283,35 @@ function separateStaffName (doctor) {
     };
 
 //Выбирает из списка возможной записи имя соответствующего врача, к которому хотят записаться
-    recordDoctorButtons.forEach(function (recordButton) { // Для каждой кнопки
-        let doctorCard = recordButton.closest(".js-doctor-card");
-        let doctorName = doctorCard.querySelector(".title");
-        recordButton.onclick = function () { // Слушаем нажатие
-            for (let i = 0; i < formDoctorNameOptions.length; i++) {
-                if (formDoctorNameOptions[i].value.includes(doctorName.textContent)) {
-                    formDoctorName.value = doctorName.textContent;
-                    break;
-                } else {
-                    formDoctorName.value = formDoctorNameOptions[0].value; // Если нажата, то выбирает тот option, который в тексте кнопки.
-                }
-            };
-        }
-    });
-
-//Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
-    function separateStaffName (title) {
-        let text = title.innerText.trim().split(" ");
-        let first = text.shift();
-        title.innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
-        return title;
-    };
+recordDoctorButtons.forEach(function (recordButton) { // Для каждой кнопки
+    let doctorCard = recordButton.closest(".js-doctor-card");
+    let doctorName = doctorCard.querySelector(".title");
+    recordButton.onclick = function () { // Слушаем нажатие
+        for (let i = 0; i < formDoctorNameOptions.length; i++) {
+            console.log(formDoctorNameOptions[i]);
+            // if (formDoctorNameOptions[i].value.toLowerCase().includes(doctorName.textContent.toLowerCase())) {
+                if (doctorName.textContent.toLowerCase().includes(formDoctorNameOptions[i].value.toLowerCase())) {
+                formDoctorName.value = doctorName.textContent;
+                break;
+            } else {
+                formDoctorName.value = formDoctorNameOptions[0].value; // Если нажата, то выбирает тот option, который в тексте кнопки.
+            }
+        };
+    }
+});
 
 //Вызываем функции на странице со списком специалистов
-    doctorsArray.forEach(function(doctor) {
-        if (doctorsArray.length > 0) {
-            let post = doctor.querySelector(".content .post");
-            removeOrderButton(doctor, post);
-        }
-        separateStaffName(doctor.querySelector(".title a"));
+if (doctorsArray.length > 0) {
+    doctorsArray.forEach(function(doctor, index) {
+        let post = doctor.querySelector(".content .post");
+        removeOrderButton(doctor, post);
     });
+    for (let i = 0; i < doctorsArray.length; i++) {
+            let text = doctorsArray[i].querySelector(".title-link").innerText.trim().split(" ");
+            let first = text.shift();
+            doctorsArray[i].querySelector(".title-link").innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
+        };
+    };
 
 //Вызываем функции на странице отдельного специалиста
     if (doctorPage) {
