@@ -270,9 +270,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
 function separateStaffName (doctor) {
-    let text = doctor.querySelector(".title").innerText.trim().split(" ", 1);
+    let text = doctor.querySelector(".title").innerText.trim().split(" ");
     let first = text.shift();
-    return ("<span>"+ first + "</span> ") + text.join(" ");
+    doctor.querySelector(".title").innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
 };
 
 //Удаление кнопки записаться для сотрудников, не являющихся врачами
@@ -288,7 +288,6 @@ recordDoctorButtons.forEach(function (recordButton) { // Для каждой к�
     let doctorName = doctorCard.querySelector(".title");
     recordButton.onclick = function () { // Слушаем нажатие
         for (let i = 0; i < formDoctorNameOptions.length; i++) {
-            console.log(formDoctorNameOptions[i]);
             // if (formDoctorNameOptions[i].value.toLowerCase().includes(doctorName.textContent.toLowerCase())) {
                 if (doctorName.textContent.toLowerCase().includes(formDoctorNameOptions[i].value.toLowerCase())) {
                 formDoctorName.value = doctorName.textContent;
@@ -316,6 +315,6 @@ if (doctorsArray.length > 0) {
 //Вызываем функции на странице отдельного специалиста
     if (doctorPage) {
         removeOrderButton(doctorPage, doctorPagePost);
-        separateStaffName(doctorPage.querySelector(".title"));
+        separateStaffName(doctorPage);
     };
 });
