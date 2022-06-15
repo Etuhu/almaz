@@ -1,28 +1,34 @@
-.service-page {
+.feedback-page {
 	.top-page-wrapper {
 		.pic .content.green-block.green-block--bottom .green-block-image {
-			top: -20%;
+			top: -10%;
 			bottom: unset;
-			width: 77%;
-            @media (max-width: 1920px) {
-                width: 75%;
+			width: 75%;
+            left: 40%;
+			@media (max-width: 1920px) {
+				width: 75%;
+			}
+			@media (max-width: 1699px) {
+                top: -8%;
             }
 			@media (max-width: 1399px) {
-                top: -25%;
+				top: -10%;
+                left: 35%;
 				width: 67%;
 			}
 			@media (max-width: 1299px) {
 				width: 75%;
+                left: 40%;
 			}
 			@media (max-width: 991px) {
-                top: -30%;
-				width: 65%;
-			}
-			@media (max-width: 575px) {
+				top: -10%;
 				width: 60%;
 			}
+			@media (max-width: 575px) {
+				width: 55%;
+			}
 			@media (max-width: 399px) {
-				width: 65%;
+				width: 60%;
 			}
 		}
 		.description {
@@ -39,7 +45,7 @@
 				}
 				@media (max-width: 991px) {
 					margin-top: 15px;
-    				margin-bottom: 50px;
+					margin-bottom: 50px;
 				}
 			}
 		}
