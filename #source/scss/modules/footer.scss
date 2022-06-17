@@ -248,7 +248,7 @@
           .control-link {
             display: inline-block;
             color: white;
-            border-bottom: dashed 2px white;
+            border-bottom: solid 2px white;
             transition: 0.3s ease;
             @media (max-width: 991px) {
               margin-bottom: 30px;

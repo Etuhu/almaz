@@ -9,15 +9,21 @@
     }
     .faq-content {
         margin-top: 50px;
+        position: relative;
         @media (max-width: 1199px) {
             margin-top: 35px;
         }
+        .faq-swiper {
+            @media (max-width: 767px) {
+                padding-bottom: 40px;
+            }
+        }
         .faq-wrapper {
             .faq-item {
-                margin-bottom: 30px;
-                @media (max-width: 1199px) {
-                    margin-bottom: 25px;
-                }
+                // margin-bottom: 30px;
+                // @media (max-width: 1199px) {
+                //     margin-bottom: 25px;
+                // }
                 .content {
                     position: relative;
                     background-color: white;
@@ -66,7 +72,44 @@
                 margin-top: 10px;
             }
         }
+
+        .faq-swiper-button-prev,
+        .faq-swiper-button-next {
+            color: #828282;
+            @media (max-width: 767px) {
+                display: none;
+            }
+            &::after {
+                @media (max-width: 1399px) {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        .faq-swiper-button-prev {
+            left: -50px;
+        }
+        .faq-swiper-button-next {
+            right: -50px;
+        }
+        .faq-swiper-pagination {
+            @media (min-width: 768px) {
+                display: none;
+            }
+            .swiper-pagination-bullet {
+                width: 6px;
+                height: 6px;
+                margin-left: 3px;
+                margin-right: 3px;
+                background-color: $green;
+            }
+        }
     }
+}
+
+
+.faq-item-content .title {
+    color: $green;
+    margin-bottom: 0;
 }
 
 .faq--index {

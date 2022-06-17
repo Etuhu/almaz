@@ -176,7 +176,7 @@ const staffSertificates = new Swiper(".staff-certificates-swiper", {
 	},
 	pagination: {
 		el: ".staff-certificates-swiper-pagination",
-		clickable: "true",
+		clickable: true,
 		dynamicBullets: true,
         dynamicMainBullets: 1,
 	},
@@ -205,6 +205,61 @@ const staffSertificates = new Swiper(".staff-certificates-swiper", {
             slidesPerView: 2.3,
             slidesPerGroup: 1,
             spaceBetween: 10,
+        },
+    },
+});
+
+const faqSwiper = new Swiper(".faq-swiper", {
+    slidesPerView: 3,
+    grid: {
+        rows: 2,
+        fill: "row",
+    },
+    speed: 500,
+    spaceBetween: 30,
+    watchOverflow: true,
+    navigation: {
+        nextEl: ".faq-swiper-button-next",
+        prevEl: ".faq-swiper-button-prev",
+    },
+	pagination: {
+		el: ".faq-swiper-pagination",
+		clickable: true,
+		dynamicBullets: true,
+        dynamicMainBullets: 1,
+	},
+    breakpoints: {
+        1200: {
+            slidesPerView: 3,
+            grid: {
+                rows: 2,
+                fill: "row",
+            },
+            spaceBetween: 30,
+        },
+        992: {
+            slidesPerView: 3,
+            grid: {
+                rows: 2,
+                fill: "row",
+            },
+            spaceBetween: 20,
+        },
+        576: {
+            slidesPerView: 2,
+            grid: {
+                rows: 3,
+                fill: "row",
+            },
+            spaceBetween: 20,
+        },
+        300: {
+            slidesPerView: 1,
+            grid: {
+                rows: 3,
+                fill: "row",
+            },
+            spaceBetween: 15,
         },
     },
 });
