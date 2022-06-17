@@ -1,0 +1,113 @@
+.articles {
+	margin-bottom: 50px;
+	@media (max-width: 991px) {
+		margin-bottom: 35px;
+	}
+	.basic-title {
+		text-align: center;
+		margin-bottom: 40px;
+		color: $green;
+		@media (max-width: 767px) {
+            margin-bottom: 30px;
+        }
+	}
+	.articles-item {
+		margin-bottom: 50px;
+		@media (max-width: 1699px) {
+			margin-bottom: 35px;
+		}
+		@media (max-width: 991px) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: 767px) {
+			margin-bottom: 25px;
+		}
+		.content {
+			display: flex;
+			flex-direction: column;
+			background-color: white;
+			position: relative;
+			height: 100%;
+			@media (max-width: 991px) {
+				flex-direction: row;
+			}
+		}
+		.pic {
+			@media (max-width: 991px) {
+				width: 40%;
+				max-width: 40%;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+		.text {
+			padding: 30px 20px 30px 30px;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			@media (max-width: 1920px) {
+				padding: 25px;
+			}
+			@media (max-width: 1699px) {
+				padding: 20px;
+			}
+			@media (max-width: 1499px) {
+				padding: 17px;
+			}
+			@media (max-width: 991px) {
+				width: 60%;
+				max-width: 60%;
+			}
+			@media (max-width: 575px) {
+				padding: 15px;
+			}
+			&:hover {
+				.title {
+					transition: 0.2s ease;
+					opacity: 0.7;
+				}
+				.more-link {
+					transition: 0.2s ease;
+					opacity: 0.7;
+				}
+			}
+			.title {
+				font-weight: 700;
+				color: $main-font-color;
+				font-size: 1rem;
+				line-height: 1.25;
+				margin-bottom: 10px;
+				transition: 0.2s ease;
+				@media (max-width: 991px) {
+					margin-bottom: 0;
+				}
+				@media (max-width: 575px) {
+					font-size: 1rem;
+				}
+			}
+			.date {
+				font-size: 0.7rem;
+				color: #ccc;
+				margin-bottom: 15px;
+			}
+			.preview {
+				font-size: 0.8rem;
+				margin-bottom: 15px;
+			}
+			.more-link {
+				display: inline-flex;
+				font-size: 0.75rem;
+				line-height: 1.7;
+				color: $green;
+				transition: 0.2s ease;
+				margin-top: auto;
+				span {
+					margin-left: 7px;
+				}
+			}
+		}
+	}
+}

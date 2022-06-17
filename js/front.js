@@ -35,7 +35,7 @@ collapseMenu.addEventListener("hidden.bs.collapse", function () {
 const promoSwiper = new Swiper(".promo-swiper", {
 	slidesPerView: 1,
 	slidesPerGroup: 1,
-	speed: 1000,
+	speed: 500,
 	simulateTouch: false,
 	// autoplay: {
 	// 	delay: 5000,
@@ -52,6 +52,10 @@ const promoSwiper = new Swiper(".promo-swiper", {
 	pagination: {
 		el: ".promo-swiper-pagination",
 		clickable: true,
+        // renderProgressbar: function (progressbarFillClass) {
+
+        //     return '<span class="' + progressbarFillClass + '">' + '<span class="' + fader + '">' + '</span>' + '</span>';
+        // },
 	},
 });
 
