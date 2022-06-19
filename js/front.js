@@ -1,3 +1,4 @@
+//Прилипающая шапка
 let header = document.querySelector(".header");
 let collapseMenu = header.querySelector(".navbar-collapse");
 function onWindowScroll() {
@@ -36,13 +37,11 @@ const promoSwiper = new Swiper(".promo-swiper", {
 	slidesPerView: 1,
 	slidesPerGroup: 1,
 	speed: 500,
-	simulateTouch: false,
-	// autoplay: {
-	// 	delay: 5000,
-	// },
-    // preloadImages: true,
-    // lazy: true,
-    // loadPrevNext: true,
+	simulateTouch: true,
+	autoplay: {
+		delay: 5000,
+	},
+    disableOnInteraction: true,
 	spaceBetween: 0,
 	watchOverflow: true,
 	navigation: {
@@ -52,10 +51,6 @@ const promoSwiper = new Swiper(".promo-swiper", {
 	pagination: {
 		el: ".promo-swiper-pagination",
 		clickable: true,
-        // renderProgressbar: function (progressbarFillClass) {
-
-        //     return '<span class="' + progressbarFillClass + '">' + '<span class="' + fader + '">' + '</span>' + '</span>';
-        // },
 	},
 });
 
@@ -66,9 +61,10 @@ const staffSwiper = new Swiper(".staff-swiper", {
 	slidesPerGroup: 1,
 	speed: 1000,
 	simulateTouch: false,
-	// autoplay: {
-	// 	delay: 5000,
-	// },
+	autoplay: {
+		delay: 5000,
+	},
+    disableOnInteraction: true,
 	spaceBetween: 0,
 	watchOverflow: true,
 	navigation: {
@@ -77,7 +73,7 @@ const staffSwiper = new Swiper(".staff-swiper", {
 	},
 	pagination: {
 		el: ".staff-swiper-pagination",
-		clickable: "true",
+		clickable: true,
 	},
 });
 
@@ -168,9 +164,10 @@ const staffSertificates = new Swiper(".staff-certificates-swiper", {
 	slidesPerView: 6,
 	slidesPerGroup: 1,
 	speed: 300,
-	// autoplay: {
-	// 	delay: 3000,
-	// },
+	autoplay: {
+		delay: 3000,
+	},
+    disableOnInteraction: true,
 	simulateTouch: true,
 	spaceBetween: 30,
 	watchOverflow: true,
@@ -271,9 +268,6 @@ const faqSwiper = new Swiper(".faq-swiper", {
 
 //Кнопка прокрутки наверх
 var scrollButton = document.getElementById('top-button');
-
-
-
 function trackScroll() {
     var scrolled = window.pageYOffset;
     var coords = document.documentElement.clientHeight;
@@ -285,7 +279,6 @@ function trackScroll() {
       scrollButton.classList.remove('show');
     }
 }
-
 function backToTop() {
     window.scrollTo({
         top: 0,
@@ -301,79 +294,61 @@ $(document).ready(function(){
     $(".phone-input").inputmask("+7 (999) 999 9999");
 });
 
-//Подключение кастомного скролла при ширине экрана больше 991 пикселя
-if ($(window).width() > 991) {
-    (function ($) {
-        $(window).on("load", function () {
-            $(".text-content-scroll").mCustomScrollbar({
-                theme: 'dark',
-                scrollInertia: "300",
-                advanced: {
-                    updateOnContentResize: "true",
-                },
-            });
-        });
-    })(jQuery);
-};
 
 //Скрипты, завязанные на карточках врачей
 document.addEventListener("DOMContentLoaded", function () {
     let doctors = document.querySelectorAll(".staff-list .js-doctor-card");
     let doctorsArray = Array.from(doctors);
-    let doctorPage = document.querySelector(".staff-item-wrapper");
+    let doctorPageInner = document.querySelector(".staff-item-wrapper--inner");
     let doctorPagePost = document.querySelector(".staff-item-wrapper .post");
     let recordForm = document.querySelector(".record-form");
     let formDoctorName = recordForm.querySelector(".doctor-name");
     let formDoctorNameOptions = formDoctorName.querySelectorAll("option");
     let recordDoctorButtons = document.querySelectorAll(".js-doctor-card .record-button");
 
-//Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
-function separateStaffName (doctor) {
-    let text = doctor.querySelector(".title").innerText.trim().split(" ");
-    let first = text.shift();
-    doctor.querySelector(".title").innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
-};
 
-//Удаление кнопки записаться для сотрудников, не являющихся врачами
+    //Отделяет фамилию врача от имени и отчества и переносит их на отдельную строку
+    function separateStaffName (doctor, title) {
+        let text = doctor.querySelector(title).innerText.trim().split(" ");
+        let first = text.shift();
+        doctor.querySelector(title).innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
+    };
+
+    //Удаление кнопки записаться для сотрудников, не являющихся врачами
     function removeOrderButton (doctor, post) {
         if (!post.innerText.toLowerCase().includes("врач")) {
             doctor.querySelector(".record-button").remove();
         }
     };
 
-//Выбирает из списка возможной записи имя соответствующего врача, к которому хотят записаться
-recordDoctorButtons.forEach(function (recordButton) { // Для каждой кнопки
-    let doctorCard = recordButton.closest(".js-doctor-card");
-    let doctorName = doctorCard.querySelector(".title");
-    recordButton.onclick = function () { // Слушаем нажатие
-        for (let i = 0; i < formDoctorNameOptions.length; i++) {
-            // if (formDoctorNameOptions[i].value.toLowerCase().includes(doctorName.textContent.toLowerCase())) {
+    //Выбирает из списка возможной записи имя соответствующего врача, к которому хотят записаться
+    recordDoctorButtons.forEach(function (recordButton) { // Для каждой кнопки
+        let doctorCard = recordButton.closest(".js-doctor-card");
+        let doctorName = doctorCard.querySelector(".title");
+        recordButton.onclick = function () { // Слушаем нажатие
+            for (let i = 0; i < formDoctorNameOptions.length; i++) {
                 if (doctorName.textContent.toLowerCase().includes(formDoctorNameOptions[i].value.toLowerCase())) {
-                formDoctorName.value = doctorName.textContent;
-                break;
-            } else {
-                formDoctorName.value = formDoctorNameOptions[0].value; // Если нажата, то выбирает тот option, который в тексте кнопки.
-            }
-        };
-    }
-});
-
-//Вызываем функции на странице со списком специалистов
-if (doctorsArray.length > 0) {
-    doctorsArray.forEach(function(doctor, index) {
-        let post = doctor.querySelector(".content .post");
-        removeOrderButton(doctor, post);
+                    formDoctorName.value = doctorName.textContent;
+                    break;
+                } else {
+                    formDoctorName.value = formDoctorNameOptions[0].value; // Если нажата, то выбирает тот option, который в тексте кнопки.
+                }
+            };
+        }
     });
-    for (let i = 0; i < doctorsArray.length; i++) {
-            let text = doctorsArray[i].querySelector(".title-link").innerText.trim().split(" ");
-            let first = text.shift();
-            doctorsArray[i].querySelector(".title-link").innerHTML = ("<span class='surname'>"+ first + "</span> ") + text.join(" ");
-        };
+
+    //Вызываем функции на странице со списком специалистов
+    if (doctorsArray.length > 0) {
+        doctorsArray.forEach(function(doctor, index) {
+            let post = doctor.querySelector(".content .post");
+            removeOrderButton(doctor, post);
+            separateStaffName(doctor, ".title-link");
+        });
     };
 
-//Вызываем функции на странице отдельного специалиста
-    if (doctorPage) {
-        removeOrderButton(doctorPage, doctorPagePost);
-        separateStaffName(doctorPage);
+    //Вызываем функции на странице отдельного специалиста
+    if (doctorPageInner) {
+        removeOrderButton(doctorPageInner, doctorPagePost);
+        separateStaffName(doctorPageInner, ".title");
     };
 });

@@ -158,12 +158,13 @@
             font-weight: 700;
             font-size: 0.75rem;
             line-height: 1;
+        }
+        a {
             &:hover,
             &:focus {
                 opacity: 0.7;
                 color: $green;
             }
-
         }
         .staff-item-services-list {
             column-count: 3;

@@ -215,9 +215,14 @@
                     &-active {
                         background-color: rgba(255, 255, 255, 0.4);
                         &::before {
-                            width: 100%;
+                            // width: 100%;
+                            animation-name: countingBar;
+                            animation-duration: 5.5s;
+                            animation-timing-function: linear;
+                            animation-iteration-count: 1;
+                            animation-fill-mode: forwards;
                             background-color: rgba(255, 255, 255, 1);
-                            transition: width 5.5s linear;
+                            // transition: width 5.5s linear;
                         }
                     }
                     + .swiper-pagination-bullet {

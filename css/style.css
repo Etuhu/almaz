@@ -3452,9 +3452,12 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   background-color: rgba(255, 255, 255, 0.4);
 }
 .promo .promo-slider .promo-swiper-pagination-container .promo-swiper-pagination .swiper-pagination-bullet-active::before {
-  width: 100%;
+  animation-name: countingBar;
+  animation-duration: 5.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   background-color: rgb(255, 255, 255);
-  transition: width 5.5s linear;
 }
 .promo .promo-slider .promo-swiper-pagination-container .promo-swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet {
   margin-left: 30px;
@@ -6680,9 +6683,7 @@ ol.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
   font-size: 0.75rem;
   line-height: 1;
 }
-.staff-item-wrapper .staff-item-services .staff-item-services-title:hover, .staff-item-wrapper .staff-item-services .staff-item-services-title:focus,
-.staff-item-wrapper .staff-item-services a:hover,
-.staff-item-wrapper .staff-item-services a:focus {
+.staff-item-wrapper .staff-item-services a:hover, .staff-item-wrapper .staff-item-services a:focus {
   opacity: 0.7;
   color: #027a3c;
 }
